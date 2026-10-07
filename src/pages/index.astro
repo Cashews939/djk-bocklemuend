@@ -1,0 +1,86 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-emerald-50 via-white to-slate-50 py-20 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200 mb-6">
+        🎾 Willkommen in Bocklemünd · Seit 1967
+      </span>
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight">
+        Mit dem Herz in Bocklemünd – <br /><span class="text-emerald-600">Von Kölnern für Kölner</span>
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
+        Die Sportgemeinschaft für die ganze Familie in Köln-Bocklemünd: Von unserer idyllischen Tennisanlage an der Heinrich-Rohlmann-Straße bis hin zu Pickleball, Turnen, Badminton und Tischtennis.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/tennis"
+          class="px-6 py-3 rounded-lg bg-emerald-600 text-white font-semibold shadow hover:bg-emerald-700 transition"
+        >
+          Tennissparte (TG Grün-Weiß) entdecken
+        </a>
+        <a
+          href="/sportarten"
+          class="px-6 py-3 rounded-lg bg-white text-slate-700 font-semibold border border-slate-300 hover:bg-slate-50 transition"
+        >
+          Alle Sportarten im Überblick
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Highlights / Sparten Grid -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-slate-900">Sportangebote für Groß und Klein</h2>
+      <p class="text-slate-600 mt-2">Gemeinschaft, Bewegung und Fairplay im Kölner Westen</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Tennis Card -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mb-4">
+          🎾
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Tennis (TG Grün-Weiß)</h3>
+        <p class="text-sm text-slate-600 mb-4">
+          5 gepflegte Ascheplätze und gemütliches Clubhaus an der Heinrich-Rohlmann-Straße. TVM-Medenspiele für Jugend, Damen & Herren.
+        </p>
+        <a href="/tennis" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1">
+          Mehr zu Tennis & Gastspielern &rarr;
+        </a>
+      </div>
+
+      <!-- Pickleball & Racketsport -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-4">
+          🏓
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Pickleball & Badminton</h3>
+        <p class="text-sm text-slate-600 mb-4">
+          Der Trendsport Pickleball begeistert bei uns Jung und Alt. Ergänzt durch unsere langjährige Badminton-Gruppe mit wöchentlichem Training.
+        </p>
+        <a href="/sportarten" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1">
+          Trainingszeiten ansehen &rarr;
+        </a>
+      </div>
+
+      <!-- Turnen & Fitness -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+        <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl mb-4">
+          🤸
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Turnen & Gymnastik</h3>
+        <p class="text-sm text-slate-600 mb-4">
+          Eltern-Kind-Turnen für die Kleinsten sowie Ballgymnastik und Tischtennis für aktive Gesundheit bis ins hohe Alter.
+        </p>
+        <a href="/sportarten" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1">
+          Gruppen & Angebote &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
