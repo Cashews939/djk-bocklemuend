@@ -1,0 +1,98 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const sports = [
+  {
+    title: 'Tennis (TG Grün-Weiß)',
+    icon: '🎾',
+    badge: '5 Ascheplätze',
+    desc: 'Traditionsreicher Tennissport an der Heinrich-Rohlmann-Straße mit 8 Mannschaften im Ligabetrieb des TVM sowie engagierter Jugendarbeit.',
+    link: '/tennis',
+    linkText: 'Zur Tennis-Sparte'
+  },
+  {
+    title: 'Pickleball',
+    icon: '🏓',
+    badge: 'Trendsportart',
+    desc: 'Das dynamische Racket-Spiel, das Elemente aus Badminton, Tennis und Tischtennis verbindet. Leicht zu erlernen und riesiger Spaßfaktor für jedes Alter.',
+    link: '/kontakt?betreff=Pickleball',
+    linkText: 'Mitspielen & Infos'
+  },
+  {
+    title: 'Badminton',
+    icon: '🏸',
+    badge: 'Freizeitsport',
+    desc: 'Schnelle Ballwechsel, Kondition und Geselligkeit in unserer Sporthalle am Wilhelm-Löhers-Platz. Offen für Anfänger und Fortgeschrittene.',
+    link: '/kontakt?betreff=Badminton',
+    linkText: 'Trainingszeiten anfragen'
+  },
+  {
+    title: 'Eltern-Kind-Turnen',
+    icon: '🤸',
+    badge: 'Für die Kleinsten',
+    desc: 'Spielerische Bewegungsförderung, Balancieren, Klettern und Spaß an Bewegung für Kleinkinder gemeinsam mit ihren Eltern.',
+    link: '/kontakt?betreff=Turnen',
+    linkText: 'Gruppen & Hallenzeiten'
+  },
+  {
+    title: 'Ballgymnastik & Fitness',
+    icon: '⚽',
+    badge: 'Gesundheitssport',
+    desc: 'Gezieltes Ganzkörpertraining, Koordination, Beweglichkeit und Kräftigung für Erwachsene und Senioren.',
+    link: '/kontakt?betreff=Gymnastik',
+    linkText: 'Mehr erfahren'
+  },
+  {
+    title: 'Tischtennis',
+    icon: '🏓',
+    badge: 'Traditionssparte',
+    desc: 'Langjährige Abteilung mit regelmäßigen Vereinsmeisterschaften, Weihnachtsturnieren und Trainingsgruppen in Bocklemünd.',
+    link: '/kontakt?betreff=Tischtennis',
+    linkText: 'Trainingszeiten'
+  }
+];
+---
+
+<MainLayout
+  title="Sportarten & Breitensport | DJK Köln-Bocklemünd 1967 e.V."
+  description="Entdecke das gesamte Sportangebot der DJK Köln-Bocklemünd: Tennis, Pickleball, Badminton, Eltern-Kind-Turnen, Ballgymnastik und Tischtennis."
+>
+  <section class="bg-slate-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-4">
+        Mehrspartenverein seit 1967
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+        Unsere Sportarten
+      </h1>
+      <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto font-light">
+        Sport und Bewegung für jedes Alter und jedes Niveau – mit Herz und Leidenschaft in Köln-Bocklemünd.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {sports.map((item) => (
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-3xl">{item.icon}</span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700">
+                {item.badge}
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">{item.desc}</p>
+          </div>
+          <a
+            href={item.link}
+            class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1"
+          >
+            {item.linkText} &rarr;
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+</MainLayout>

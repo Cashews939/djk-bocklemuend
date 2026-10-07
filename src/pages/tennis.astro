@@ -1,0 +1,230 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import tennisplatzImg from '../assets/images/tennisplatz.jpg';
+import trainerImg from '../assets/images/trainer-andreas.jpg';
+import teamImg from '../assets/images/tennis-team.jpg';
+
+const teams = [
+  { name: '1. Damen', liga: '1. Bezirksliga TVM', training: 'Dienstags 18:00 - 20:00 Uhr' },
+  { name: '1. Herren', liga: '2. Bezirksliga TVM', training: 'Mittwochs & Freitags 18:00 - 20:00 Uhr' },
+  { name: '2. Herren', liga: '1. Kreisliga TVM', training: 'Mittwochs 18:00 - 20:00 Uhr' },
+  { name: '1. Damen 30', liga: 'Bezirksliga TVM', training: 'Donnerstags 18:00 - 20:00 Uhr' },
+  { name: '2. Damen 30', liga: '1. Kreisliga TVM', training: 'Donnerstags 18:00 - 20:00 Uhr' },
+  { name: 'Damen 40', liga: '1. Bezirksliga TVM', training: 'Dienstags 18:00 - 20:00 Uhr' },
+  { name: 'Herren 50', liga: '2. Bezirksliga TVM', training: 'Montags 17:30 - 19:30 Uhr' },
+  { name: 'Herren 70', liga: 'Oberliga TVM', training: 'Mittwochs 10:00 - 12:00 Uhr' },
+];
+---
+
+<MainLayout
+  title="Tennis (TG Grün-Weiß) | DJK Köln-Bocklemünd 1967 e.V."
+  description="Tennis bei der TG Grün-Weiß im DJK Bocklemünd: 5 Ascheplätze an der Heinrich-Rohlmann-Straße, Medenspiele im TVM, kostenloses Schnuppertraining und Sommertraining."
+>
+  <!-- Hero Banner Tennis -->
+  <section class="relative bg-slate-900 text-white py-16 lg:py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-25">
+      <Image
+        src={tennisplatzImg}
+        alt="Tennisplätze TG Grün-Weiß Bocklemünd"
+        class="w-full h-full object-cover"
+        format="webp"
+      />
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-4 backdrop-blur">
+        TG Grün-Weiß im TVM (Vereins-Nr. 2110)
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+        Tennis met Hätz an der Heinrich-Rohlmann-Straße
+      </h1>
+      <p class="mt-4 text-lg text-slate-300 max-w-2xl font-light">
+        Fünf gepflegte Rotsandplätze, ein familiäres Clubhaus und sportliche Begeisterung von der Jugend bis zu den Senioren.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-4">
+        <a
+          href="#schnuppern"
+          class="px-5 py-2.5 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-500 transition shadow"
+        >
+          Kostenloses Schnuppertraining
+        </a>
+        <a
+          href="#gastspieler"
+          class="px-5 py-2.5 rounded-lg bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/20 transition"
+        >
+          Gastspieler-Infos & Gebühren
+        </a>
+        <a
+          href="https://tvm-tennis.de/spielbetrieb/verein/2110-tg-gw-im-djk-bocklemuend"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-5 py-2.5 rounded-lg bg-slate-800 text-slate-200 font-semibold border border-slate-700 hover:bg-slate-700 transition"
+        >
+          TVM / nuLiga Spielpläne ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Die Anlage & Fakten -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Unsere Tennisheimat</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Die Tennisanlage im Grünen</h2>
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          Eingebettet in Köln-Bocklemünd bietet die Tennisgemeinschaft Grün-Weiß beste Voraussetzungen für Tennisbegeisterte jeden Niveaus. Ob lockeres Match nach der Arbeit oder spannendes Medenspiel am Wochenende:
+        </p>
+        <ul class="mt-6 space-y-3 text-slate-700 text-sm">
+          <li class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">✓</span>
+            <strong>5 gepflegte Rotsand-Ascheplätze</strong>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">✓</span>
+            <strong>Vereinseigenes Clubhaus</strong> mit Sonnenterasse für geselliges Beisammensein
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">✓</span>
+            <strong>Umkleiden & Sanitärräume</strong> vor Ort
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">✓</span>
+            <strong>Lage:</strong> Heinrich-Rohlmann-Straße, 50829 Köln (ausreichend Parkmöglichkeiten vorhanden)
+          </li>
+        </ul>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+        <Image
+          src={teamImg}
+          alt="TG Grün-Weiß Tennisspielerinnen"
+          class="w-full h-80 object-cover"
+          format="webp"
+        />
+        <div class="p-4 bg-white text-xs text-slate-500">
+          Gemeinschaft & Teamgeist auf unserer Anlage in Köln-Bocklemünd
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mannschaften Section -->
+  <section class="py-16 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Wettkampf & Spielbetrieb</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Unsere Mannschaften</h2>
+        <p class="text-slate-600 mt-2 max-w-xl mx-auto">
+          Von der Jugend bis zur Oberliga – die TG Grün-Weiß im DJK Bocklemünd nimmt mit zahlreichen Teams an den Meisterschaftsspielen des Tennisverbands Mittelrhein (TVM) teil.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {teams.map((team) => (
+          <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-bold text-slate-900 text-lg">{team.name}</h3>
+              <span class="px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 text-emerald-800">TVM</span>
+            </div>
+            <div class="text-xs text-slate-500 mb-2">
+              <strong>Liga:</strong> {team.liga}
+            </div>
+            <div class="text-xs text-slate-600">
+              <strong>Training:</strong> {team.training}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <a
+          href="https://tvm-tennis.de/spielbetrieb/verein/2110-tg-gw-im-djk-bocklemuend"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition"
+        >
+          Alle TVM-Tabellen & Spieltermine ansehen ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training & Schnuppertraining Box -->
+  <section id="schnuppern" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-gradient-to-br from-emerald-50 via-white to-amber-50 rounded-3xl p-8 sm:p-12 border border-emerald-200 shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <div class="lg:col-span-2">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 mb-4">
+            Kostenloses Schnuppertraining
+          </span>
+          <h2 class="text-3xl font-extrabold text-slate-900">
+            Tennis unverbindlich ausprobieren!
+          </h2>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Für Kinder und Jugendliche bieten wir während der Sommersaison regelmäßig <strong>kostenloses Schnuppertraining</strong> an. Auch Erwachsene, die nach einer Pause wieder einsteigen oder neu mit dem Tennissport beginnen möchten, sind herzlich eingeladen.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-4">
+            <a
+              href="/kontakt?betreff=Schnuppertraining"
+              class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow"
+            >
+              Jetzt zum Schnuppern anmelden
+            </a>
+            <a
+              href="/downloads"
+              class="px-6 py-3 rounded-xl bg-white text-slate-700 font-semibold border border-slate-300 hover:bg-slate-50 transition"
+            >
+              Aufnahmeantrag herunterladen
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
+          <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-500">
+            <Image
+              src={trainerImg}
+              alt="Tennis-Cheftrainer Andreas Witkiewicz"
+              class="w-full h-full object-cover"
+              format="webp"
+            />
+          </div>
+          <h4 class="font-bold text-slate-900">Andreas Witkiewicz</h4>
+          <p class="text-xs text-emerald-700 font-medium">Vereinstrainer</p>
+          <p class="text-xs text-slate-500 mt-2">
+            Verantwortlich für das Jugendtraining, Sommercamps und Mannschaftstraining.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gastspieler-Regelung -->
+  <section id="gastspieler" class="py-16 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">Informationen für Gastspieler</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+          Nicht-Mitglieder und Gäste sind auf unserer Anlage herzlich willkommen, um mit Vereinsmitgliedern ein Match zu spielen.
+        </p>
+        <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 mb-6 text-sm text-slate-700 space-y-2">
+          <div class="flex justify-between py-1 border-b border-slate-200">
+            <span>Platzgebühr für Gäste (pro Stunde/Gast):</span>
+            <span class="font-bold text-slate-900">gemäß aktueller Platzordnung</span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-slate-200">
+            <span>Schuhwerk:</span>
+            <span class="font-bold text-slate-900">Ausschließlich Tennisschuhe (Sandplatzprofil)</span>
+          </div>
+          <div class="flex justify-between py-1">
+            <span>Platzpflege:</span>
+            <span class="font-bold text-slate-900">Vor und nach dem Spiel abziehen & wässern</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500">
+          Ausführliche Hinweise zur Platzbelegung und Buchung findest du in den Aushängen am Clubhaus oder nach Rücksprache mit dem Vorstand / Sportwart.
+        </p>
+      </div>
+    </div>
+  </section>
+</MainLayout>
