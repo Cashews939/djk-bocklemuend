@@ -1,19 +1,25 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { Image } from 'astro:assets';
+
 import tennisplatzImg from '../assets/images/tennisplatz.jpg';
-import trainerImg from '../assets/images/trainer-andreas.jpg';
+import trainerAndreasImg from '../assets/images/trainer-andreas.jpg';
+import trainerRaoulImg from '../assets/images/trainer-raoul.jpg';
 import teamImg from '../assets/images/tennis-team.jpg';
+import herrenTeamImg from '../assets/images/tennis-herren.jpg';
+import damen40Img from '../assets/images/tennis-damen40.webp';
+import damen30Img from '../assets/images/tennis-damen30.jpeg';
+import herren70Img from '../assets/images/tennis-herren70.webp';
+import platzaufbereitungImg from '../assets/images/platzaufbereitung.jpeg';
 
 const teams = [
-  { name: '1. Damen', liga: '1. Bezirksliga TVM', training: 'Dienstags 18:00 - 20:00 Uhr' },
-  { name: '1. Herren', liga: '2. Bezirksliga TVM', training: 'Mittwochs & Freitags 18:00 - 20:00 Uhr' },
-  { name: '2. Herren', liga: '1. Kreisliga TVM', training: 'Mittwochs 18:00 - 20:00 Uhr' },
-  { name: '1. Damen 30', liga: 'Bezirksliga TVM', training: 'Donnerstags 18:00 - 20:00 Uhr' },
-  { name: '2. Damen 30', liga: '1. Kreisliga TVM', training: 'Donnerstags 18:00 - 20:00 Uhr' },
-  { name: 'Damen 40', liga: '1. Bezirksliga TVM', training: 'Dienstags 18:00 - 20:00 Uhr' },
-  { name: 'Herren 50', liga: '2. Bezirksliga TVM', training: 'Montags 17:30 - 19:30 Uhr' },
-  { name: 'Herren 70', liga: 'Oberliga TVM', training: 'Mittwochs 10:00 - 12:00 Uhr' },
+  { name: '1. Damen', liga: '1. Bezirksliga TVM', training: 'Dienstags 18:00 - 20:00 Uhr', img: teamImg },
+  { name: '1. Herren', liga: '2. Bezirksliga TVM', training: 'Mittwochs & Freitags 18:00 - 20:00 Uhr', img: herrenTeamImg },
+  { name: '2. Herren', liga: '1. Kreisliga TVM', training: 'Mittwochs 18:00 - 20:00 Uhr', img: herrenTeamImg },
+  { name: '1. & 2. Damen 30', liga: 'Bezirksliga & Kreisliga TVM', training: 'Donnerstags 18:00 - 20:00 Uhr', img: damen30Img },
+  { name: 'Damen 40', liga: '1. Bezirksliga TVM', training: 'Dienstags 18:00 - 20:00 Uhr', img: damen40Img },
+  { name: 'Herren 50', liga: '2. Bezirksliga TVM', training: 'Montags 17:30 - 19:30 Uhr', img: herrenTeamImg },
+  { name: 'Herren 70', liga: 'Oberliga TVM', training: 'Mittwochs 10:00 - 12:00 Uhr', img: herren70Img },
 ];
 ---
 
@@ -49,18 +55,16 @@ const teams = [
           Kostenloses Schnuppertraining
         </a>
         <a
-          href="#gastspieler"
+          href="#mannschaften"
           class="px-5 py-2.5 rounded-lg bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/20 transition"
         >
-          Gastspieler-Infos & Gebühren
+          Unsere Mannschaften & Fotos
         </a>
         <a
-          href="https://tvm-tennis.de/spielbetrieb/verein/2110-tg-gw-im-djk-bocklemuend"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#gastspieler"
           class="px-5 py-2.5 rounded-lg bg-slate-800 text-slate-200 font-semibold border border-slate-700 hover:bg-slate-700 transition"
         >
-          TVM / nuLiga Spielpläne ↗
+          Gastspieler-Infos & Gebühren
         </a>
       </div>
     </div>
@@ -95,106 +99,151 @@ const teams = [
         </ul>
       </div>
 
-      <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md">
-        <Image
-          src={teamImg}
-          alt="TG Grün-Weiß Tennisspielerinnen"
-          class="w-full h-80 object-cover"
-          format="webp"
-        />
-        <div class="p-4 bg-white text-xs text-slate-500">
-          Gemeinschaft & Teamgeist auf unserer Anlage in Köln-Bocklemünd
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+          <Image
+            src={tennisplatzImg}
+            alt="Sandplätze TG Grün-Weiß Bocklemünd"
+            class="w-full h-48 object-cover"
+            format="webp"
+          />
+          <div class="p-3 bg-white text-xs text-slate-600 font-medium">
+            5 gepflegte Sandplätze
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+          <Image
+            src={platzaufbereitungImg}
+            alt="Platzaufbereitung Frühjahr"
+            class="w-full h-48 object-cover"
+            format="webp"
+          />
+          <div class="p-3 bg-white text-xs text-slate-600 font-medium">
+            Frühjahrs-Instandsetzung
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Mannschaften Section -->
-  <section class="py-16 bg-slate-50 border-y border-slate-200">
+  <!-- Mannschaften Section mit echten Team-Fotos -->
+  <section id="mannschaften" class="py-16 bg-slate-50 border-y border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Wettkampf & Spielbetrieb</span>
         <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Unsere Mannschaften</h2>
         <p class="text-slate-600 mt-2 max-w-xl mx-auto">
-          Von der Jugend bis zur Oberliga – die TG Grün-Weiß im DJK Bocklemünd nimmt mit zahlreichen Teams an den Meisterschaftsspielen des Tennisverbands Mittelrhein (TVM) teil.
+          Von der Jugend bis zur Oberliga – die TG Grün-Weiß im DJK Bocklemünd nimmt mit zahlreichen Teams an den Meisterschaftsspielen des TVM teil.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {teams.map((team) => (
-          <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition">
-            <div class="flex items-center justify-between mb-3">
-              <h3 class="font-bold text-slate-900 text-lg">{team.name}</h3>
-              <span class="px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 text-emerald-800">TVM</span>
+          <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+            <div class="h-48 overflow-hidden bg-slate-100">
+              <Image
+                src={team.img}
+                alt={`Mannschaft ${team.name}`}
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+                format="webp"
+              />
             </div>
-            <div class="text-xs text-slate-500 mb-2">
-              <strong>Liga:</strong> {team.liga}
-            </div>
-            <div class="text-xs text-slate-600">
-              <strong>Training:</strong> {team.training}
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="font-bold text-slate-900 text-lg">{team.name}</h3>
+                  <span class="px-2 py-0.5 rounded text-xs font-medium bg-emerald-100 text-emerald-800">TVM</span>
+                </div>
+                <div class="text-xs text-slate-500 mb-2">
+                  <strong>Liga:</strong> {team.liga}
+                </div>
+                <div class="text-xs text-slate-600 mb-4">
+                  <strong>Training:</strong> {team.training}
+                </div>
+              </div>
+              <a
+                href="https://tvm-tennis.de/spielbetrieb/verein/2110-tg-gw-im-djk-bocklemuend"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1"
+              >
+                TVM Spielplan & Tabelle &rarr;
+              </a>
             </div>
           </div>
         ))}
       </div>
 
-      <div class="mt-10 text-center">
+      <div class="mt-12 text-center">
         <a
           href="https://tvm-tennis.de/spielbetrieb/verein/2110-tg-gw-im-djk-bocklemuend"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow"
         >
-          Alle TVM-Tabellen & Spieltermine ansehen ↗
+          Alle TVM-Ergebnisse & Spieltermine der TG Grün-Weiß ansehen ↗
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Training & Schnuppertraining Box -->
+  <!-- Trainerteam & Schnuppertraining Box -->
   <section id="schnuppern" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-gradient-to-br from-emerald-50 via-white to-amber-50 rounded-3xl p-8 sm:p-12 border border-emerald-200 shadow-sm">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-        <div class="lg:col-span-2">
-          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 mb-4">
-            Kostenloses Schnuppertraining
-          </span>
-          <h2 class="text-3xl font-extrabold text-slate-900">
-            Tennis unverbindlich ausprobieren!
-          </h2>
-          <p class="text-slate-600 mt-4 leading-relaxed">
-            Für Kinder und Jugendliche bieten wir während der Sommersaison regelmäßig <strong>kostenloses Schnuppertraining</strong> an. Auch Erwachsene, die nach einer Pause wieder einsteigen oder neu mit dem Tennissport beginnen möchten, sind herzlich eingeladen.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-4">
-            <a
-              href="/kontakt?betreff=Schnuppertraining"
-              class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow"
-            >
-              Jetzt zum Schnuppern anmelden
-            </a>
-            <a
-              href="/downloads"
-              class="px-6 py-3 rounded-xl bg-white text-slate-700 font-semibold border border-slate-300 hover:bg-slate-50 transition"
-            >
-              Aufnahmeantrag herunterladen
-            </a>
-          </div>
-        </div>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 mb-2">
+          Kostenloses Schnuppertraining
+        </span>
+        <h2 class="text-3xl font-extrabold text-slate-900">
+          Tennis unverbindlich ausprobieren!
+        </h2>
+        <p class="text-slate-600 mt-3 text-sm leading-relaxed">
+          Für Kinder und Jugendliche bieten wir während der Sommersaison regelmäßig <strong>kostenloses Schnuppertraining</strong> an. Auch Erwachsene und Wiedereinsteiger sind herzlich eingeladen.
+        </p>
+      </div>
 
+      <!-- Trainerteam Galerie -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
         <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
           <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-500">
             <Image
-              src={trainerImg}
+              src={trainerAndreasImg}
               alt="Tennis-Cheftrainer Andreas Witkiewicz"
               class="w-full h-full object-cover"
               format="webp"
             />
           </div>
           <h4 class="font-bold text-slate-900">Andreas Witkiewicz</h4>
-          <p class="text-xs text-emerald-700 font-medium">Vereinstrainer</p>
+          <p class="text-xs text-emerald-700 font-medium">Vereinstrainer & Sportwart</p>
           <p class="text-xs text-slate-500 mt-2">
-            Verantwortlich für das Jugendtraining, Sommercamps und Mannschaftstraining.
+            Verantwortlich für Jugendtraining, Sommercamps und Mannschaftstraining.
           </p>
         </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
+          <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-emerald-500">
+            <Image
+              src={trainerRaoulImg}
+              alt="Tennistrainer Raoul Schilp"
+              class="w-full h-full object-cover"
+              format="webp"
+            />
+          </div>
+          <h4 class="font-bold text-slate-900">Raoul Schilp</h4>
+          <p class="text-xs text-emerald-700 font-medium">Trainerteam</p>
+          <p class="text-xs text-slate-500 mt-2">
+            Betreuung der Jugendgruppen, Einsteigertraining und Technik-Aufbau.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a
+          href="/kontakt?betreff=Schnuppertraining"
+          class="px-8 py-3.5 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow inline-block"
+        >
+          Jetzt zum Schnuppern anmelden
+        </a>
       </div>
     </div>
   </section>
@@ -209,8 +258,8 @@ const teams = [
         </p>
         <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 mb-6 text-sm text-slate-700 space-y-2">
           <div class="flex justify-between py-1 border-b border-slate-200">
-            <span>Platzgebühr für Gäste (pro Stunde/Gast):</span>
-            <span class="font-bold text-slate-900">gemäß aktueller Platzordnung</span>
+            <span>Platzgebühr für Gäste:</span>
+            <span class="font-bold text-slate-900">gemäß Aushang & Platzordnung</span>
           </div>
           <div class="flex justify-between py-1 border-b border-slate-200">
             <span>Schuhwerk:</span>
