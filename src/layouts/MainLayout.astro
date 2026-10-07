@@ -51,13 +51,95 @@ const {
           </a>
           <a
             href="/tennis#schnuppern"
-            class="inline-flex px-4 py-2 text-sm font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm transition"
+            class="hidden sm:inline-flex px-4 py-2 text-sm font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm transition"
           >
             Schnuppertraining
+          </a>
+
+          <!-- Mobile Hamburger Toggle Button -->
+          <button
+            id="mobile-menu-toggle"
+            type="button"
+            class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-600 transition"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Hauptmenü öffnen"
+          >
+            <!-- Burger Icon -->
+            <svg id="burger-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- Close Icon -->
+            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg">
+        <a href="/" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+          Startseite
+        </a>
+        <a href="/sportarten" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+          Sportarten (inkl. Tennis)
+        </a>
+        <a href="/der-verein" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+          Der Verein & Vorstand
+        </a>
+        <a href="/aktuelles" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+          Aktuelles
+        </a>
+        <a href="/termine" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+          Termine
+        </a>
+        <a href="/kontakt" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+          Kontakt & Anfahrt
+        </a>
+        <div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+          <a
+            href="/tennis#schnuppern"
+            class="text-center w-full px-4 py-2.5 rounded-lg bg-emerald-600 text-white font-semibold shadow-sm hover:bg-emerald-700 transition"
+          >
+            Schnuppertraining anfragen
+          </a>
+          <a
+            href="/keystatic"
+            class="text-center w-full px-3 py-2 text-xs font-semibold rounded-md border border-slate-300 text-slate-700 hover:bg-slate-50 transition"
+          >
+            Keystatic CMS Login
           </a>
         </div>
       </div>
     </header>
+
+    <script>
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const burgerIcon = document.getElementById('burger-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      if (toggleBtn && mobileMenu && burgerIcon && closeIcon) {
+        toggleBtn.addEventListener('click', () => {
+          const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+          toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+          mobileMenu.classList.toggle('hidden');
+          burgerIcon.classList.toggle('hidden');
+          closeIcon.classList.toggle('hidden');
+        });
+
+        // Schließen bei Klick auf Link
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            burgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+          });
+        });
+      }
+    </script>
 
     <!-- Main Content -->
     <main class="flex-grow">
