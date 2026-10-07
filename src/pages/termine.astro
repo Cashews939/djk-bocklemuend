@@ -1,0 +1,60 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const events = await getCollection('termine');
+events.sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+---
+
+<MainLayout
+  title="Termine & Veranstaltungen | DJK Köln-Bocklemünd 1967 e.V."
+  description="Kommende Medenspiele, Vereinsturniere, Platzinstandsetzung und Jahreshauptversammlungen der DJK Köln-Bocklemünd."
+>
+  <section class="bg-slate-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Termine & Veranstaltungen</h1>
+      <p class="mt-4 text-slate-300 max-w-xl mx-auto font-light">
+        Alle Termine für Tennis, Ligaspiele, Turniere und Vereinsfeste im Überblick.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="space-y-4">
+      {events.map((event) => {
+        const d = new Date(event.data.date);
+        const day = d.toLocaleDateString('de-DE', { day: '2-digit' });
+        const month = d.toLocaleDateString('de-DE', { month: 'short' });
+        const year = d.getFullYear();
+
+        return (
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:border-emerald-300 transition">
+            <div class="flex items-center gap-6">
+              <div class="w-16 h-16 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 flex flex-col items-center justify-center flex-shrink-0 font-bold">
+                <span class="text-xl leading-none">{day}</span>
+                <span class="text-xs uppercase">{month}</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-100 text-slate-700">
+                    {event.data.category}
+                  </span>
+                  <span class="text-xs text-slate-500">
+                    🕒 {event.data.time}
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">{event.data.title}</h3>
+                <div class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+                  📍 {event.data.location}
+                </div>
+              </div>
+            </div>
+            <div class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-100">
+              {year}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+</MainLayout>

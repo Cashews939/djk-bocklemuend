@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('aktuelles');
+  return articles.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<MainLayout
+  title={`${entry.data.title} | DJK Köln-Bocklemünd`}
+  description={entry.data.teaser}
+>
+  <article class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <a
+      href="/aktuelles"
+      class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1 mb-8"
+    >
+      &larr; Zurück zur Übersicht
+    </a>
+
+    <header class="mb-10">
+      <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
+        <span class="px-2.5 py-0.5 rounded-full font-semibold bg-emerald-100 text-emerald-800">
+          {entry.data.category}
+        </span>
+        <time datetime={entry.data.date}>
+          {new Date(entry.data.date).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
+        </time>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+        {entry.data.title}
+      </h1>
+      <p class="mt-4 text-lg text-slate-600 font-light border-l-4 border-emerald-500 pl-4 py-1 italic">
+        {entry.data.teaser}
+      </p>
+    </header>
+
+    <div class="prose prose-slate lg:prose-lg max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-emerald-600 prose-img:rounded-xl">
+      <Content />
+    </div>
+  </article>
+</MainLayout>

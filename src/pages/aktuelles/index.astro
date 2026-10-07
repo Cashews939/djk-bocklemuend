@@ -1,0 +1,54 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('aktuelles');
+articles.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+
+<MainLayout
+  title="Aktuelles & News | DJK Köln-Bocklemünd 1967 e.V."
+  description="Aktuelle Neuigkeiten, Spielberichte und Ankündigungen rund um die DJK Köln-Bocklemünd und TG Grün-Weiß Tennis."
+>
+  <section class="bg-slate-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Aktuelles & Vereinsnews</h1>
+      <p class="mt-4 text-slate-300 max-w-xl mx-auto font-light">
+        Bleibe auf dem Laufenden über Spieltage, Veranstaltungen und Vereinsaktivitäten.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {articles.map((item) => (
+        <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+              <span class="px-2.5 py-0.5 rounded-full font-semibold bg-emerald-50 text-emerald-700">
+                {item.data.category}
+              </span>
+              <time datetime={item.data.date}>
+                {new Date(item.data.date).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' })}
+              </time>
+            </div>
+            <h2 class="text-xl font-bold text-slate-900 mb-3 leading-snug">
+              <a href={`/aktuelles/${item.id}`} class="hover:text-emerald-700 transition">
+                {item.data.title}
+              </a>
+            </h2>
+            <p class="text-sm text-slate-600 line-clamp-3 mb-6">
+              {item.data.teaser}
+            </p>
+          </div>
+          <a
+            href={`/aktuelles/${item.id}`}
+            class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1"
+          >
+            Weiterlesen &rarr;
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</MainLayout>
