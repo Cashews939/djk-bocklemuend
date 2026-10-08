@@ -2,36 +2,165 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="Impressum | DJK Köln-Bocklemünd 1967 e.V.">
+<MainLayout 
+  title="Impressum | DJK Köln-Bocklemünd 1967 e.V."
+  description="Impressum und gesetzliche Pflichtangaben der DJK Köln-Bocklemünd 1967 e.V. gemäß § 5 DDG (ehemals TMG) und § 18 MStV."
+>
   <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-extrabold text-slate-900 mb-6">Impressum</h1>
+    <div class="mb-10">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-800 border border-emerald-500/20 mb-3">
+        Rechtliche Hinweise
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Impressum</h1>
+      <p class="text-slate-600 text-sm mt-2">
+        Gesetzliche Anbieterkennzeichnung gemäß § 5 Digitale-Dienste-Gesetz (DDG) und § 18 Abs. 2 Medienstaatsvertrag (MStV).
+      </p>
+    </div>
     
-    <div class="prose prose-slate max-w-none text-sm space-y-4 text-slate-700">
-      <h2 class="text-xl font-bold text-slate-900">Angaben gemäß § 5 DDG</h2>
-      <p>
-        <strong>DJK Köln-Bocklemünd 1967 e.V.</strong><br />
-        Wilhelm-Löhers-Platz 4<br />
-        50829 Köln
-      </p>
+    <div class="space-y-8 text-slate-700 text-sm leading-relaxed">
+      <!-- Angaben gem. § 5 DDG -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>🏛️</span> Angaben gemäß § 5 DDG
+        </h2>
+        <div class="space-y-1">
+          <p class="font-bold text-slate-900">DJK Köln-Bocklemünd 1967 e.V.</p>
+          <p>Wilhelm-Löhers-Platz 4</p>
+          <p>50829 Köln</p>
+          <p class="text-xs text-slate-500 pt-1">
+            (Verein für Sportpflege in katholischer Gemeinschaft · Verein für Breiten- und Leistungssport)
+          </p>
+        </div>
+      </div>
 
-      <h2 class="text-xl font-bold text-slate-900">Vertreten durch den Vorstand</h2>
-      <p>
-        DJK Köln-Bocklemünd 1967 e.V.<br />
-        E-Mail: info@djk-bocklemuend.de
-      </p>
+      <!-- Vertretungsberechtigter Vorstand -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>👥</span> Vertretungsberechtigter Vorstand (§ 26 BGB)
+        </h2>
+        <p class="mb-3">
+          Gemäß § 1.1.2 der Vereinssatzung wird der Verein gerichtlich und außergerichtlich gemeinschaftlich vertreten durch den 1. Vorsitzenden und den Geschäftsführer:
+        </p>
+        <ul class="list-disc list-inside space-y-1.5 ml-1">
+          <li><strong>Werner Pieper</strong> (1. Vorsitzender)</li>
+          <li><strong>Frederick Milz</strong> (Geschäftsführer)</li>
+        </ul>
+        <p class="text-xs text-slate-500 mt-4">
+          Weitere Vorstandsmitglieder und Abteilungsleiter (u.&nbsp;a. Kassenwart Sven Meyer, Sportwart Tennis Andreas Witkiewicz, Breitensport Walter Schnierer, Pickleball Kai Auhagen) unterstützen die Vereinsführung satzungsgemäß im Gesamtvorstand.
+        </p>
+      </div>
 
-      <h2 class="text-xl font-bold text-slate-900">Tennisabteilung / TG Grün-Weiß</h2>
-      <p>
-        Tennisanlage Heinrich-Rohlmann-Straße<br />
-        50829 Köln<br />
-        Mitglied im Tennisverband Mittelrhein (TVM e.V., Vereins-Nr. 2110)
-      </p>
+      <!-- Kontakt & Steuernummer -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>📬</span> Kontakt & Steuerliche Angaben
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">E-Mail</p>
+            <p>
+              <a href="mailto:info@djk-bocklemuend.de" class="text-emerald-700 font-semibold hover:underline">info@djk-bocklemuend.de</a>
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Internet</p>
+            <p>
+              <a href="https://www.djk-bocklemuend.de" class="text-emerald-700 font-semibold hover:underline">www.djk-bocklemuend.de</a>
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Steuernummer</p>
+            <p>223 / 5904 / 0085 (Finanzamt Köln)</p>
+            <p class="text-xs text-slate-500 mt-0.5">Als gemeinnütziger Sportverein nach § 52 Abs. 2 Nr. 21 AO von der Körperschaftsteuer befreit.</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Bankverbindung</p>
+            <p>Volksbank Köln Bonn eG</p>
+            <p class="text-xs text-slate-500 mt-0.5">IBAN im Aufnahmeantrag hinterlegt</p>
+          </div>
+        </div>
+      </div>
 
-      <h2 class="text-xl font-bold text-slate-900">Registereintrag</h2>
-      <p>
-        Eintragung im Vereinsregister.<br />
-        Registergericht: Amtsgericht Köln
-      </p>
+      <!-- Vereinsregister & Verbandszugehörigkeit -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>📋</span> Registereintrag & Verbandszugehörigkeit
+        </h2>
+        <div class="space-y-3">
+          <p>
+            <strong>Registergericht:</strong> Amtsgericht Köln<br />
+            <strong>Registernummer:</strong> Eingetragen im Vereinsregister des Amtsgerichts Köln (VR)
+          </p>
+          <div class="pt-2 border-t border-slate-100">
+            <p class="font-semibold text-slate-900 mb-1">Fach- und Sportverbandszugehörigkeiten:</p>
+            <ul class="list-disc list-inside space-y-1 text-slate-600">
+              <li>DJK Sportverband (Deutsche Jugendkraft) / Landessportbund Nordrhein-Westfalen (LSB NRW)</li>
+              <li><strong>Tennis:</strong> TG Grün-Weiß im Tennisverband Mittelrhein e.V. (TVM, Vereins-Nr. 2110)</li>
+              <li><strong>Pickleball:</strong> Pickleball-Cologne im Westdeutschen Pickleball-Verband (WDPV)</li>
+              <li><strong>Tischtennis:</strong> Spielbetrieb im Westdeutschen Tischtennis-Verband e.V. (WTTV)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Verantwortlich für den Inhalt -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>✍️</span> Redaktionell verantwortlich (§ 18 Abs. 2 MStV)
+        </h2>
+        <p>
+          Werner Pieper (1. Vorsitzender)<br />
+          Wilhelm-Löhers-Platz 4<br />
+          50829 Köln<br />
+          E-Mail: <a href="mailto:info@djk-bocklemuend.de" class="text-emerald-700 hover:underline">info@djk-bocklemuend.de</a>
+        </p>
+      </div>
+
+      <!-- Sportstätten & Anlagen -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>📍</span> Sportstätten des Vereins
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+            <p class="font-semibold text-slate-900">Tennisanlage Heinrich-Rohlmann-Straße</p>
+            <p class="text-xs text-slate-600 mt-1">Heinrich-Rohlmann-Straße 1, 50829 Köln-Bocklemünd</p>
+            <p class="text-xs text-slate-500 mt-1">5 Sandplätze, Clubhaus & Umkleiden (TG Grün-Weiß)</p>
+          </div>
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+            <p class="font-semibold text-slate-900">Hallenbetrieb Wilhelm-Löhers-Platz & Gesamtschule</p>
+            <p class="text-xs text-slate-600 mt-1">Wilhelm-Löhers-Platz 4 / Schulturnhallen Görlinger-Zentrum, 50829 Köln</p>
+            <p class="text-xs text-slate-500 mt-1">Badminton, Turnen, Ballgymnastik, Tischtennis & Pickleball</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Verbraucherstreitbeilegung & Haftung -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-4">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 mb-2">Verbraucherstreitbeilegung (§ 36 VSBG)</h2>
+          <p class="text-xs text-slate-600">
+            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100">
+          <h3 class="font-bold text-slate-900 mb-1">Haftung für Inhalte und Links</h3>
+          <p class="text-xs text-slate-600 mb-2">
+            Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+          </p>
+          <p class="text-xs text-slate-600">
+            Unser Angebot enthält Links zu externen Websites Dritter (u.&nbsp;a. Spielberichte auf nuLiga/TVM, Verbandsseiten oder Fan12-Vereinsshop), auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+          </p>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100">
+          <h3 class="font-bold text-slate-900 mb-1">Urheberrecht</h3>
+          <p class="text-xs text-slate-600">
+            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </MainLayout>

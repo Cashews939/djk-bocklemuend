@@ -10,6 +10,18 @@ import kaiAuhagenImg from '../assets/images/vorstand-kai-auhagen.jpg';
 import paterPiotrImg from '../assets/images/vorstand-pater-piotr.webp';
 import andreasWitkiewiczImg from '../assets/images/trainer-andreas.jpg';
 
+// Galerie & Archivbilder
+import galerieTennisLuft from '../assets/images/galerie-tennisplatz-luft.png';
+import galerieTennisAnlage from '../assets/images/galerie-tennis-anlage.png';
+import galerieTennisSpiel from '../assets/images/galerie-tennis-spielszene.jpg';
+import tennisplatzImg from '../assets/images/tennisplatz.jpg';
+import platzaufbereitungImg from '../assets/images/platzaufbereitung.jpeg';
+import sporthalleImg from '../assets/images/sporthalle.webp';
+import ttJubelImg from '../assets/images/galerie-tischtennis-jubel.jpg';
+import ttTurnierImg from '../assets/images/galerie-tischtennis-turnier.jpg';
+import pickleballActionImg from '../assets/images/pickleball-action.jpg';
+import turnenKinderImg from '../assets/images/turnen-kinder.webp';
+
 const vorstand = [
   {
     role: '1. Vorsitzender',
@@ -124,6 +136,161 @@ const vorstand = [
           </div>
         </div>
       ))}
+    </div>
+  </section>
+
+  <!-- Impressionen & Galerie Vereinsleben -->
+  <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <!-- Subtile Dekoration -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.12),transparent_40%),radial-gradient(circle_at_80%_80%,rgba(5,150,105,0.08),transparent_50%)] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-3">
+          Bildergalerie
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Impressionen aus unserem Vereinsleben</h2>
+        <p class="mt-3 text-slate-300 text-sm font-light">
+          Ob packende Ballwechsel auf unseren 5 Sandplätzen, gesellige Momente auf der Clubhausterrasse oder Hallensport mit Jung und Alt: Hier schlägt das Herz der DJK Köln-Bocklemünd.
+        </p>
+      </div>
+
+      <!-- Galerie Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 1. Tennis Luftbild / Anlage -->
+        <div class="group bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 hover:border-emerald-500 transition duration-300 shadow-lg flex flex-col">
+          <div class="h-60 overflow-hidden relative">
+            <Image
+              src={galerieTennisLuft}
+              alt="Tennisanlage Heinrich-Rohlmann-Straße aus der Vogelperspektive"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              format="webp"
+            />
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-950/80 text-emerald-300 backdrop-blur-xs border border-emerald-500/30">
+              Tennisanlage
+            </span>
+          </div>
+          <div class="p-5 flex-grow">
+            <h3 class="font-bold text-white text-base mb-1">5 Sandplätze im Grünen</h3>
+            <p class="text-xs text-slate-400">Ruhig gelegen an der Heinrich-Rohlmann-Straße mit eigenem Clubhaus und schattigen Sitzgelegenheiten.</p>
+          </div>
+        </div>
+
+        <!-- 2. Tennis Clubhaus & Plätze -->
+        <div class="group bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 hover:border-emerald-500 transition duration-300 shadow-lg flex flex-col">
+          <div class="h-60 overflow-hidden relative">
+            <Image
+              src={galerieTennisAnlage}
+              alt="Tennisanlage und Clubhaus TG Grün-Weiß"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              format="webp"
+            />
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-950/80 text-emerald-300 backdrop-blur-xs border border-emerald-500/30">
+              TG Grün-Weiß
+            </span>
+          </div>
+          <div class="p-5 flex-grow">
+            <h3 class="font-bold text-white text-base mb-1">Clubhaus & Terrasse</h3>
+            <p class="text-xs text-slate-400">Der Treffpunkt für Mitglieder, Zuschauer und Gastmannschaften nach spannenden Medenspielen.</p>
+          </div>
+        </div>
+
+        <!-- 3. Frühjahrs-Instandsetzung -->
+        <div class="group bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 hover:border-emerald-500 transition duration-300 shadow-lg flex flex-col">
+          <div class="h-60 overflow-hidden relative">
+            <Image
+              src={platzaufbereitungImg}
+              alt="Frühjahrs-Instandsetzung der Sandplätze durch Vereinsmitglieder"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              format="webp"
+            />
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-amber-950/80 text-amber-300 backdrop-blur-xs border border-amber-500/30">
+              Ehrenamt & Pflege
+            </span>
+          </div>
+          <div class="p-5 flex-grow">
+            <h3 class="font-bold text-white text-base mb-1">Frühjahrs-Platzaufbereitung</h3>
+            <p class="text-xs text-slate-400">Jedes Frühjahr packen engagierte Mitglieder gemeinsam an, um die Sandplätze für den Sommer fit zu machen.</p>
+          </div>
+        </div>
+
+        <!-- 4. Spielszene Tennis -->
+        <div class="group bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 hover:border-emerald-500 transition duration-300 shadow-lg flex flex-col">
+          <div class="h-60 overflow-hidden relative">
+            <Image
+              src={galerieTennisSpiel}
+              alt="Matchball auf Asche bei der TG Grün-Weiß Bocklemünd"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              format="webp"
+            />
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-950/80 text-emerald-300 backdrop-blur-xs border border-emerald-500/30">
+              Matchbetrieb
+            </span>
+          </div>
+          <div class="p-5 flex-grow">
+            <h3 class="font-bold text-white text-base mb-1">Spannende Ballwechsel</h3>
+            <p class="text-xs text-slate-400">Egal ob TVM-Liga-Spiel oder entspanntes Doppel am Feierabend: Fairplay und Spielfreude stehen immer im Fokus.</p>
+          </div>
+        </div>
+
+        <!-- 5. Tischtennis Turnier & Erfolg -->
+        <div class="group bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 hover:border-emerald-500 transition duration-300 shadow-lg flex flex-col">
+          <div class="h-60 overflow-hidden relative">
+            <Image
+              src={ttJubelImg}
+              alt="Jubel der Tischtennis-Mannschaft nach einem Auswärtserfolg"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              format="webp"
+            />
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-teal-950/80 text-teal-300 backdrop-blur-xs border border-teal-500/30">
+              Tischtennis Liga
+            </span>
+          </div>
+          <div class="p-5 flex-grow">
+            <h3 class="font-bold text-white text-base mb-1">Gemeinsamer Teamgeist</h3>
+            <p class="text-xs text-slate-400">Unsere Spielgemeinschaft TTSG DJK-HSV Bocklemünd behauptet sich erfolgreich im WTTV-Ligabetrieb.</p>
+          </div>
+        </div>
+
+        <!-- 6. Pickleball Action -->
+        <div class="group bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 hover:border-emerald-500 transition duration-300 shadow-lg flex flex-col">
+          <div class="h-60 overflow-hidden relative">
+            <Image
+              src={pickleballActionImg}
+              alt="Rasantes Match bei den Pickleball-Cologne Trainingsterminen"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              format="webp"
+            />
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-blue-950/80 text-blue-300 backdrop-blur-xs border border-blue-500/30">
+              Pickleball-Cologne
+            </span>
+          </div>
+          <div class="p-5 flex-grow">
+            <h3 class="font-bold text-white text-base mb-1">Trendsport für jedes Alter</h3>
+            <p class="text-xs text-slate-400">Leicht zu lernen, extrem dynamisch und mit wachsender Community in unserer Halle.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-slate-400 text-xs mb-4">
+          Du möchtest Teil unserer Gemeinschaft werden oder beim Schnuppertraining reinschnuppern?
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="/tennis#schnuppern"
+            class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition shadow-sm text-sm"
+          >
+            🎾 Schnuppertraining anfragen
+          </a>
+          <a
+            href="/sportarten"
+            class="px-6 py-3 rounded-xl bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 transition text-sm font-semibold"
+          >
+            Alle Sportarten entdecken &rarr;
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </MainLayout>

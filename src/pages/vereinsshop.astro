@@ -18,15 +18,17 @@ import MainLayout from '../layouts/MainLayout.astro';
       <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto font-light">
         Einheitlich auflaufen bei Medenspielen & Training! Sichere dir die offizielle Vereins- und Mannschaftskleidung in unseren Vereinsfarben Grün & Weiß.
       </p>
-      <div class="mt-8">
-        <a
-          href="https://djk-bocklemuend.fan12.de/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition shadow-lg text-base"
+      <div class="mt-8 flex flex-col items-center">
+        <button
+          type="button"
+          data-open-shop-modal
+          class="cursor-pointer inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition shadow-lg text-base"
         >
           Zum Online-Shop (djk-bocklemuend.fan12.de) ↗
-        </a>
+        </button>
+        <p class="mt-2.5 text-xs text-slate-400 flex items-center gap-1.5">
+          <span>ℹ️</span> Hinweis: Du verlässt die Website der DJK Bocklemünd und wirst zu unserem offiziellen Partnershop auf <em>Fan12</em> weitergeleitet.
+        </p>
       </div>
     </div>
   </section>
@@ -102,15 +104,17 @@ import MainLayout from '../layouts/MainLayout.astro';
         <strong>💡 Wichtiger Bestellhinweis:</strong> Bitte achte bei der Bestellung von Oberteilen darauf, den Haken bei <em>„Vereinsnamen“</em> zu setzen, damit der offizielle DJK Bocklemünd Schriftzug aufgedruckt wird.
       </div>
 
-      <div class="mt-8 text-center">
-        <a
-          href="https://djk-bocklemuend.fan12.de/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow"
+      <div class="mt-8 flex flex-col items-center">
+        <button
+          type="button"
+          data-open-shop-modal
+          class="cursor-pointer inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow"
         >
           Jetzt Kollektion im Shop ansehen ↗
-        </a>
+        </button>
+        <p class="mt-2.5 text-xs text-slate-500 flex items-center gap-1.5">
+          <span>ℹ️</span> Hinweis: Du verlässt unsere Website und wechselst zu unserem externen Shop-Partner <em>Fan12 (djk-bocklemuend.fan12.de)</em>.
+        </p>
       </div>
     </div>
   </section>

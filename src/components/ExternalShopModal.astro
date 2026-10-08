@@ -1,0 +1,157 @@
+---
+interface Props {
+  id?: string;
+}
+
+const { id = "external-shop-modal" } = Astro.props;
+---
+
+<div
+  id={id}
+  class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-200"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby={`${id}-title`}
+  aria-describedby={`${id}-desc`}
+>
+  <div class="relative w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-emerald-100 transform transition-transform duration-200 scale-95 opacity-0 modal-card">
+    <!-- Header Icon & Badge -->
+    <div class="flex items-center justify-between mb-4">
+      <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center text-2xl shadow-xs">
+        🛍️
+      </div>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200">
+        <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+        Externer Partner
+      </span>
+    </div>
+
+    <!-- Modal Titel -->
+    <h3 id={`${id}-title`} class="text-xl sm:text-2xl font-bold text-slate-900 mb-2">
+      Du verlässt die Website der DJK Köln-Bocklemünd
+    </h3>
+
+    <!-- Beschreibung -->
+    <div id={`${id}-desc`} class="text-slate-600 text-sm leading-relaxed space-y-3 mb-6">
+      <p>
+        Du wirst nun zu unserem offiziellen Ausrüster- und Vereinsshop bei <strong>Fan12 (djk-bocklemuend.fan12.de)</strong> weitergeleitet.
+      </p>
+      <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 text-xs text-slate-700 space-y-1.5">
+        <p class="font-semibold text-slate-900 flex items-center gap-1.5">
+          <span>ℹ️</span> Wichtige Hinweise zum Bestellvorgang:
+        </p>
+        <p>• Betreiber des Online-Shops und Vertragspartner für alle Bestellungen ist die <em>Fan12 GmbH</em>.</p>
+        <p>• Für Bestellungen und Zahlungen gelten die Datenschutzbestimmungen und AGB von Fan12.</p>
+        <p class="text-emerald-700 font-medium pt-1">
+          💚 10 % der Netto-Erlöse fließen automatisch als Unterstützung in unsere Vereinskasse!
+        </p>
+      </div>
+    </div>
+
+    <!-- Aktions-Buttons -->
+    <div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-3 pt-2">
+      <button
+        type="button"
+        class="modal-cancel-btn w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 text-sm font-semibold hover:bg-slate-100 focus-visible:ring-2 focus-visible:ring-slate-400 transition"
+      >
+        Abbrechen & hierbleiben
+      </button>
+      <a
+        href="https://djk-bocklemuend.fan12.de/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="modal-confirm-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-bold hover:bg-emerald-700 focus-visible:ring-2 focus-visible:ring-emerald-600 shadow-sm transition"
+      >
+        <span>Weiter zum Online-Shop</span>
+        <span>↗</span>
+      </a>
+    </div>
+
+    <!-- Schließen-Kreuz oben rechts -->
+    <button
+      type="button"
+      class="modal-close-x absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition focus-visible:ring-2 focus-visible:ring-emerald-600"
+      aria-label="Dialog schließen"
+    >
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  function setupShopModal() {
+    const modal = document.getElementById('external-shop-modal');
+    if (!modal) return;
+
+    const modalCard = modal.querySelector('.modal-card');
+    const cancelBtn = modal.querySelector('.modal-cancel-btn');
+    const closeX = modal.querySelector('.modal-close-x');
+    const confirmBtn = modal.querySelector('.modal-confirm-btn');
+
+    function openModal() {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.classList.add('overflow-hidden');
+      requestAnimationFrame(() => {
+        if (modalCard) {
+          modalCard.classList.remove('scale-95', 'opacity-0');
+          modalCard.classList.add('scale-100', 'opacity-100');
+        }
+      });
+      // Fokus auf Bestätigungs-Button setzen
+      confirmBtn?.focus();
+    }
+
+    function closeModal() {
+      if (modalCard) {
+        modalCard.classList.remove('scale-100', 'opacity-100');
+        modalCard.classList.add('scale-95', 'opacity-0');
+      }
+      setTimeout(() => {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }, 150);
+    }
+
+    // Klick-Handler für Schließen
+    cancelBtn?.addEventListener('click', closeModal);
+    closeX?.addEventListener('click', closeModal);
+    confirmBtn?.addEventListener('click', () => {
+      // Nach Klick auf Weiter schließen
+      setTimeout(closeModal, 300);
+    });
+
+    // Schließen bei Klick auf den Backdrop außerhalb der Card
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Tastatur: Escape schließt
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    // Alle Trigger-Elemente mit dem data-Attribut oder speziellem Selector verbinden
+    document.querySelectorAll('[data-open-shop-modal]').forEach((trigger) => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    });
+  }
+
+  // Initialisieren und bei Astro View-Transitions berücksichtigen
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupShopModal);
+  } else {
+    setupShopModal();
+  }
+  document.addEventListener('astro:page-load', setupShopModal);
+</script>

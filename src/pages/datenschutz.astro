@@ -2,33 +2,175 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="Datenschutz | DJK Köln-Bocklemünd 1967 e.V.">
+<MainLayout 
+  title="Datenschutzerklärung | DJK Köln-Bocklemünd 1967 e.V."
+  description="Datenschutzerklärung der DJK Köln-Bocklemünd 1967 e.V. nach DSGVO und BDSG bezüglich Website, Kontaktformulare, Mitgliederdaten, Fotos und Verbandsübermittlung."
+>
   <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-extrabold text-slate-900 mb-6">Datenschutzerklärung</h1>
+    <div class="mb-10">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-800 border border-emerald-500/20 mb-3">
+        Datenschutz & Privatsphäre
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Datenschutzerklärung</h1>
+      <p class="text-slate-600 text-sm mt-2">
+        Informationen über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten gemäß Art. 13 und 14 Datenschutz-Grundverordnung (DSGVO) und Bundesdatenschutzgesetz (BDSG).
+      </p>
+    </div>
     
-    <div class="prose prose-slate max-w-none text-sm space-y-4 text-slate-700">
-      <h2 class="text-xl font-bold text-slate-900">1. Datenschutz auf einen Blick</h2>
-      <p>
-        Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften (DSGVO) sowie dieser Datenschutzerklärung.
-      </p>
+    <div class="space-y-8 text-slate-700 text-sm leading-relaxed">
+      <!-- 1. Verantwortlicher -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>🛡️</span> 1. Verantwortlicher für die Datenverarbeitung
+        </h2>
+        <p class="mb-3">
+          Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO), sonstiger in den Mitgliedstaaten der Europäischen Union geltenden Datenschutzgesetze und anderer Bestimmungen mit datenschutzrechtlichem Charakter ist:
+        </p>
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-1">
+          <p class="font-bold text-slate-900">DJK Köln-Bocklemünd 1967 e.V.</p>
+          <p>Wilhelm-Löhers-Platz 4</p>
+          <p>50829 Köln</p>
+          <p class="pt-1">
+            <strong>Vertreten durch:</strong> Werner Pieper (1. Vorsitzender) und Frederick Milz (Geschäftsführer)
+          </p>
+          <p>
+            <strong>E-Mail:</strong> <a href="mailto:info@djk-bocklemuend.de" class="text-emerald-700 hover:underline">info@djk-bocklemuend.de</a>
+          </p>
+          <p>
+            <strong>Internet:</strong> <a href="https://www.djk-bocklemuend.de" class="text-emerald-700 hover:underline">www.djk-bocklemuend.de</a>
+          </p>
+        </div>
+      </div>
 
-      <h2 class="text-xl font-bold text-slate-900">2. Verantwortliche Stelle</h2>
-      <p>
-        DJK Köln-Bocklemünd 1967 e.V.<br />
-        Wilhelm-Löhers-Platz 4<br />
-        50829 Köln<br />
-        E-Mail: info@djk-bocklemuend.de
-      </p>
+      <!-- 2. Bereitstellung der Website & Server-Logfiles -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>🌐</span> 2. Bereitstellung der Website und Server-Logfiles
+        </h2>
+        <p class="mb-3">
+          Beim rein informatorischen Besuch unserer Website erfassen die Server unseres Hosting-Dienstleisters (Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA) automatisch Informationen, die Ihr Browser übermittelt (sogenannte Server-Logfiles). Dies beinhaltet:
+        </p>
+        <ul class="list-disc list-inside space-y-1 text-slate-600 mb-3">
+          <li>Browsertyp und Browserversion</li>
+          <li>Verwendetes Betriebssystem</li>
+          <li>Referrer URL (die zuvor besuchte Seite)</li>
+          <li>Hostname des zugreifenden Rechners / IP-Adresse (in der Regel anonymisiert)</li>
+          <li>Uhrzeit und Datum der Serveranfrage</li>
+        </ul>
+        <p class="text-xs text-slate-500">
+          <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technisch fehlerfreien Darstellung, Stabilität und Ausfallsicherheit unserer Website). Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+        </p>
+      </div>
 
-      <h2 class="text-xl font-bold text-slate-900">3. Datenerfassung auf dieser Website</h2>
-      <p>
-        Die Nutzung unserer Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name oder E-Mail-Adresse im Kontaktformular) erhoben werden, erfolgt dies stets auf freiwilliger Basis.
-      </p>
+      <!-- 3. Kontaktformular & Kontaktaufnahme -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>✉️</span> 3. Kontaktaufnahme (Formular oder E-Mail)
+        </h2>
+        <p class="mb-3">
+          Wenn Sie uns per Kontaktformular (z.&nbsp;B. Schnuppertraining, Mitgliedschaftsfragen) oder per E-Mail Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+        </p>
+        <p class="text-xs text-slate-500 mb-2">
+          <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (sofern Ihre Anfrage der Vorbereitung einer Mitgliedschaft oder eines Vertrages dient) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der schnellen Beantwortung von Anfragen von Interessenten und Mitgliedern).
+        </p>
+        <p class="text-xs text-slate-500">
+          Die Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.&nbsp;B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Gesetzliche Aufbewahrungsfristen bleiben unberührt.
+        </p>
+      </div>
 
-      <h2 class="text-xl font-bold text-slate-900">4. Vereinsmitglieder & Fotos</h2>
-      <p>
-        Veröffentlichungen von Mannschaftsfotos, Ergebnissen und Berichten aus dem Jugend- oder Erwachsenenbereich erfolgen ausschließlich im Rahmen der satzungsmäßigen Zwecke des Vereins und nach vorliegender Einwilligung der betroffenen Personen bzw. Erziehungsberechtigten.
-      </p>
+      <!-- 4. Datenverarbeitung bei Vereinsmitgliedschaft -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>👥</span> 4. Datenverarbeitung von Vereinsmitgliedern
+        </h2>
+        <p class="mb-3">
+          Für die Begründung, Organisation und Durchführung des Mitgliedschaftsverhältnisses in der DJK Köln-Bocklemünd 1967 e.V. verarbeiten wir personenbezogene Daten (Name, Vorname, Geburtsdatum, Anschrift, Kontaktdaten, Bankverbindung / SEPA-Mandat, Abteilungszugehörigkeit).
+        </p>
+        <div class="space-y-2 text-xs text-slate-600">
+          <p>
+            <strong>Zweck:</strong> Mitgliederverwaltung, Beitragsinkasso, Organisation des Spiel-, Kurs- und Trainingsbetriebes sowie satzungsgemäße Einladungen zu Mitgliederversammlungen.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des Mitgliedschaftsvertrages nach der Vereinssatzung).
+          </p>
+          <p>
+            <strong>Übermittlung an Verbände:</strong> Zur Teilnahme am Wettkampf- und Medenspielbetrieb melden wir die erforderlichen Daten an die zuständigen Fachverbände (z.&nbsp;B. Tennisverband Mittelrhein e.V. / nuLiga für TG Grün-Weiß, Westdeutscher Tischtennis-Verband e.V., DJK-Sportverband).
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. Fotos & Berichterstattung (Jugendschutz) -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>📷</span> 5. Veröffentlichung von Fotos, Spielberichten & Jugendschutz
+        </h2>
+        <p class="mb-3">
+          Im Rahmen der Öffentlichkeitsarbeit des Vereins berichten wir auf unserer Website über sportliche Veranstaltungen (Turniere, Medenspiele, Sommercamps, Vereinsmeisterschaften) und veröffentlichen dabei ggf. Bild- und Textbeiträge.
+        </p>
+        <ul class="list-disc list-inside space-y-1.5 text-slate-600 text-xs mb-3">
+          <li>
+            <strong>Erwachsene:</strong> Fotos von Vereinsveranstaltungen werden im Rahmen berechtigter Interessen zur Dokumentation des Vereinslebens (Art. 6 Abs. 1 lit. f DSGVO in Verbindung mit §§ 22, 23 KunstUrhG) bzw. auf Basis ausdrücklicher Einwilligung veröffentlicht.
+          </li>
+          <li>
+            <strong>Kinder & Jugendliche:</strong> Fotos und Namen von Minderjährigen (z.&nbsp;B. Jugend-Sommercamp, Kinderturnen, Jugend-Medenspiele) werden auf unserer Website <strong>ausschließlich nach vorheriger schriftlicher Einwilligung der Erziehungsberechtigten</strong> veröffentlicht.
+          </li>
+          <li>
+            <strong>Widerrufsrecht:</strong> Jede betroffene Person (oder deren gesetzliche Vertreter) kann die Veröffentlichung einzelner Bilder jederzeit formlos mit Wirkung für die Zukunft widerrufen. Das betreffende Bild wird unverzüglich von der Website entfernt.
+          </li>
+        </ul>
+      </div>
+
+      <!-- 6. Cookies & Externe Dienste -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>🍪</span> 6. Cookies & Externe Dienste
+        </h2>
+        <p class="mb-3">
+          Unsere Website arbeitet datensparsam und setzt <strong>keine invasiven Tracking- oder Werbe-Cookies</strong> (wie Google Analytics, Meta Pixel etc.) ein. 
+        </p>
+        <p class="text-xs text-slate-600 mb-2">
+          Soweit rein technisch notwendige Session-Cookies gesetzt werden (z.&nbsp;B. im internen Redaktionssystem Keystatic für berechtigte Vorstandsmitglieder), erfolgt dies auf Grundlage von § 25 Abs. 2 TDDDG bzw. Art. 6 Abs. 1 lit. f DSGVO.
+        </p>
+        <p class="text-xs text-slate-600">
+          <strong>Externe Links:</strong> Bei Klicks auf externe Verlinkungen (z.&nbsp;B. TVM / nuLiga, Google Maps oder Vereinsshop bei Fan12) verlassen Sie unsere Internetpräsenz. Für die Datenverarbeitung auf den verlinkten Seiten ist der jeweilige Betreiber verantwortlich.
+        </p>
+      </div>
+
+      <!-- 7. Rechte der betroffenen Personen -->
+      <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs">
+        <h2 class="text-lg font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100 flex items-center gap-2">
+          <span>⚖️</span> 7. Ihre Rechte als betroffene Person
+        </h2>
+        <p class="mb-3">
+          Sie haben nach der DSGVO jederzeit folgende Rechte gegenüber unserem Verein:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-600">
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+            <strong class="text-slate-900 block mb-0.5">Auskunftsrecht (Art. 15 DSGVO)</strong>
+            Sie können jederzeit unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten verlangen.
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+            <strong class="text-slate-900 block mb-0.5">Berichtigung (Art. 16 DSGVO)</strong>
+            Sie haben ein Recht auf unverzügliche Berichtigung unrichtiger Daten oder Vervollständigung unvollständiger Angaben.
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+            <strong class="text-slate-900 block mb-0.5">Löschung & Einschränkung (Art. 17 & 18 DSGVO)</strong>
+            Sie können die Löschung oder die Einschränkung der Verarbeitung verlangen, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+            <strong class="text-slate-900 block mb-0.5">Widerspruchsrecht (Art. 21 DSGVO)</strong>
+            Sie können einer auf berechtigten Interessen basierenden Verarbeitung jederzeit widersprechen.
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-100 text-xs text-slate-500">
+          <p>
+            <strong>Beschwerderecht bei der Aufsichtsbehörde (Art. 77 DSGVO):</strong><br />
+            Sie haben das Recht auf Beschwerde bei der zuständigen Datenschutzaufsichtsbehörde: 
+            <em>Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW), Kavalleriestr. 2–4, 40213 Düsseldorf</em> (<a href="https://www.ldi.nrw.de" target="_blank" rel="noopener noreferrer" class="text-emerald-700 hover:underline">www.ldi.nrw.de</a>).
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </MainLayout>

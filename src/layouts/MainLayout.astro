@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import djkLogoImg from '../assets/images/djk-logo.png';
+import ExternalShopModal from '../components/ExternalShopModal.astro';
 
 interface Props {
   title?: string;
@@ -53,15 +54,10 @@ const {
         <div class="flex items-center gap-3">
           <a
             href="/vereinsshop"
+            title="Vereinsshop (externer Shop-Partner Fan12 & Erima)"
             class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md border border-emerald-300 text-emerald-800 bg-emerald-50 hover:bg-emerald-100 transition"
           >
-            🛍️ Vereinsshop
-          </a>
-          <a
-            href="/keystatic"
-            class="hidden sm:inline-flex px-3 py-1.5 text-xs font-semibold rounded-md border border-slate-300 text-slate-700 hover:bg-slate-100 transition"
-          >
-            CMS Login
+            🛍️ Vereinsshop ↗
           </a>
           <a
             href="/tennis#schnuppern"
@@ -120,12 +116,6 @@ const {
             class="text-center w-full px-4 py-2.5 rounded-lg bg-emerald-600 text-white font-semibold shadow-sm hover:bg-emerald-700 transition"
           >
             Schnuppertraining anfragen
-          </a>
-          <a
-            href="/keystatic"
-            class="text-center w-full px-3 py-2 text-xs font-semibold rounded-md border border-slate-300 text-slate-700 hover:bg-slate-50 transition"
-          >
-            Keystatic CMS Login
           </a>
         </div>
       </div>
@@ -197,10 +187,11 @@ const {
         <div>
           <div class="text-white font-semibold mb-3">Rechtliches & Service</div>
           <ul class="text-sm space-y-2">
-            <li><a href="/vereinsshop" class="text-emerald-400 hover:text-white transition font-medium">🛍️ Vereinsshop (Erima)</a></li>
+            <li><a href="/vereinsshop" title="Vereinsshop (externer Partner Fan12)" class="text-emerald-400 hover:text-white transition font-medium">🛍️ Vereinsshop (Erima / Fan12) ↗</a></li>
             <li><a href="/downloads" class="hover:text-white transition">Downloads & Mitgliedsantrag</a></li>
             <li><a href="/impressum" class="hover:text-white transition">Impressum</a></li>
             <li><a href="/datenschutz" class="hover:text-white transition">Datenschutz</a></li>
+            <li class="pt-1"><a href="/keystatic" class="text-xs text-slate-500 hover:text-slate-400 transition">🔒 Vereinsverwaltung (CMS)</a></li>
           </ul>
         </div>
       </div>
@@ -208,6 +199,9 @@ const {
         © 2026 DJK Köln-Bocklemünd 1967 e.V. Alle Rechte vorbehalten.
       </div>
     </footer>
+
+    <!-- Externer Shop Bestätigungs-Dialog -->
+    <ExternalShopModal />
 
     <style is:global>
       /* Subtiles, organisches, fließendes grünes Vereins-Muster */
