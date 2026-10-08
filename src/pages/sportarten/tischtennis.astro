@@ -1,0 +1,208 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+import tischtennisTeamImg from '../../assets/images/tischtennis-team.jpg';
+import tischtennisTeam2Img from '../../assets/images/tischtennis-team2.jpg';
+import tischtennisMatchImg from '../../assets/images/tischtennis-match.jpg';
+import tischtennisActionImg from '../../assets/images/tischtennis-action.jpg';
+---
+
+<MainLayout
+  title="Tischtennis in Köln-Bocklemünd | DJK Bocklemünd 1967 e.V."
+  description="Tischtennis mit Herz in Köln-Bocklemünd. 5 aktive Herrenmannschaften von Bezirksklasse bis Hobbyliga. Training dienstags & donnerstags 17:00 - 21:30 Uhr."
+>
+  <!-- Hero Section -->
+  <section class="bg-slate-900 text-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-4">
+          🏓 5 Mannschaften im Ligaspielbetrieb · WTTV
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Tischtennis bei der DJK Bocklemünd
+        </h1>
+        <p class="mt-4 text-lg text-slate-300 font-light leading-relaxed">
+          Von packenden Ligaspielen in der Bezirksklasse bis hin zu geselligen Hobbyduellen an der grünen Platte: Bei uns zählt sportlicher Ehrgeiz genauso wie echter Teamgeist.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/kontakt?betreff=Tischtennis%20Probetraining"
+            class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition shadow"
+          >
+            Kostenloses Probetraining vereinbaren
+          </a>
+          <a
+            href="https://wttv.click-tt.de"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-6 py-3 rounded-xl bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/20 transition"
+          >
+            📊 Ergebnisse auf click-TT (WTTV)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Übersicht & Training -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Aktiv im Westdeutschen Tischtennis-Verband</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Egal ob Profi oder Anfänger</h2>
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          Wir sind immer auf der Suche nach neuen Spielerinnen und Spielern – ganz gleich, ob du schon Liga-Erfahrung (TTR-Punkte) mitbringst oder nach einer Pause wieder zum Schläger greifen möchtest.
+        </p>
+        <p class="text-slate-600 mt-3 leading-relaxed">
+          Mit aktuell <strong>5 gemeldeten Herrenmannschaften</strong> im WTTV bieten wir für jedes Spielniveau die passende Liga und sportliche Herausforderung. Nach dem Training sitzen wir gerne noch im Vereinsheim zusammen.
+        </p>
+
+        <!-- Trainingszeiten Info -->
+        <div class="mt-8 bg-slate-50 rounded-2xl p-6 border border-slate-200">
+          <h3 class="font-bold text-slate-900 text-lg mb-3 flex items-center gap-2">
+            <span>🕒</span> Trainingszeiten & Hallenadresse
+          </h3>
+          <div class="space-y-3 text-sm text-slate-700">
+            <div class="flex items-start gap-2">
+              <span class="font-bold w-24">Dienstag:</span>
+              <span><strong>17:00 – 21:30 Uhr</strong> (Freies Training & Mannschaftsspiele)</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="font-bold w-24">Donnerstag:</span>
+              <span><strong>17:00 – 21:30 Uhr</strong> (Freies Training & Systemtraining)</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="font-bold w-24">Halle:</span>
+              <span>Dreifachhalle am Schulzentrum Bocklemünd, Heinrich-Rohlmann-Straße / Wilhelm-Löhers-Platz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galerie mit optimierter Ausrichtung -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-64 bg-slate-100 sm:col-span-2">
+          <Image
+            src={tischtennisTeam2Img}
+            alt="Tischtennis Mannschaft DJK Bocklemünd"
+            class="w-full h-full object-cover object-top"
+            format="webp"
+          />
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-48 bg-slate-100">
+          <Image
+            src={tischtennisTeamImg}
+            alt="Tischtennis Team am Spieltag"
+            class="w-full h-full object-cover object-top"
+            format="webp"
+          />
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-48 bg-slate-100">
+          <Image
+            src={tischtennisActionImg}
+            alt="Spannender Ballwechsel beim Tischtennis"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Mannschaften Übersicht -->
+    <div class="border-t border-slate-200 pt-16">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Ligabetrieb 2025/2026</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Unsere 5 Mannschaften</h2>
+        <p class="text-slate-600 mt-2 text-sm">
+          Ergebnisse, Tabellen und Aufstellungen werden live über WTTV / click-TT geführt.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <!-- 1. Mannschaft -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 mb-2">1. Mannschaft</span>
+            <h3 class="font-bold text-slate-900">1. Bezirksklasse</h3>
+            <p class="text-xs text-slate-500 mt-1">Gruppe 2</p>
+            <p class="text-xs text-slate-600 mt-3">Spitzenteam mit Ambitionen auf die Relegationsplätze.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500">
+            Kader: S. Esser, R. Walther, A. Mohseni, A. Esser
+          </div>
+        </div>
+
+        <!-- 2. Mannschaft -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 mb-2">2. Mannschaft</span>
+            <h3 class="font-bold text-slate-900">2. Bezirksklasse</h3>
+            <p class="text-xs text-slate-500 mt-1">Gruppe 1</p>
+            <p class="text-xs text-slate-600 mt-3">Starke Konkurrenz und sicherer Klassenerhalt als Saisonziel.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500">
+            Kader: A. Sharifi, I. Sadovski, M. Fehmer, A. Fischer
+          </div>
+        </div>
+
+        <!-- 3. Mannschaft -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-800 mb-2">3. Mannschaft</span>
+            <h3 class="font-bold text-slate-900">3. Bezirksklasse</h3>
+            <p class="text-xs text-slate-500 mt-1">Gruppe 5</p>
+            <p class="text-xs text-slate-600 mt-3">Solide Platzierung im oberen Mittelfeld im Visier.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500">
+            Eingespieltes Quartett mit viel Erfahrung
+          </div>
+        </div>
+
+        <!-- 4. Mannschaft -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-800 mb-2">4. Mannschaft</span>
+            <h3 class="font-bold text-slate-900">3. Bezirksklasse</h3>
+            <p class="text-xs text-slate-500 mt-1">Gruppe 6</p>
+            <p class="text-xs text-slate-600 mt-3">Guter Mix aus Routine und Spielfreude.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500">
+            Gefestigtes Mittelfeld in der Staffel
+          </div>
+        </div>
+
+        <!-- 5. Mannschaft -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-800 mb-2">5. Mannschaft</span>
+            <h3 class="font-bold text-slate-900">Aufbau & Integration</h3>
+            <p class="text-xs text-slate-500 mt-1">Einsteigerliga</p>
+            <p class="text-xs text-slate-600 mt-3">Ideal für neue Mitglieder und erste Wettkampferfahrungen.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500">
+            Integration von Neuzugängen
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mitspielen CTA -->
+  <section class="py-16 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-extrabold text-slate-900">Lust auf einen Schlagabtausch?</h2>
+      <p class="text-slate-600 mt-3 max-w-xl mx-auto">
+        Komm einfach dienstags oder donnerstags um 17:30 Uhr vorbei oder schreib uns eine Nachricht über das Kontaktformular. Wir freuen uns auf dich!
+      </p>
+      <div class="mt-6 flex justify-center gap-4">
+        <a
+          href="/kontakt?betreff=Tischtennis"
+          class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow"
+        >
+          Kontakt aufnehmen & Probetraining vereinbaren
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

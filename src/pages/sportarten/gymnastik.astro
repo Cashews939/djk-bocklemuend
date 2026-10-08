@@ -1,0 +1,112 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+import ballgymnastikImg from '../../assets/images/ballgymnastik.jpg';
+---
+
+<MainLayout
+  title="Ballgymnastik in Köln-Bocklemünd | DJK Bocklemünd 1967 e.V."
+  description="Ballgymnastik als reines Hobby für Fitness, Beweglichkeit und Gesundheit. Donnerstags von 18:30 bis 20:00 Uhr in der Halle bei der DJK Köln-Bocklemünd."
+>
+  <!-- Hero Section -->
+  <section class="bg-slate-900 text-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-4">
+          ⚽ Fitness & Gesundheitssport
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Ballgymnastik
+        </h1>
+        <p class="mt-4 text-lg text-slate-300 font-light leading-relaxed">
+          Wir betreiben die schönste Nebensache der Welt als reines Hobby: Ganzkörperfitness mit Bällen, Beweglichkeit, Koordination und jede Menge Spaß in entspannter Atmosphäre.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/kontakt?betreff=Ballgymnastik%20Probetraining"
+            class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition shadow"
+          >
+            Kostenloses Probetraining anfragen
+          </a>
+          <a
+            href="/sportarten"
+            class="px-6 py-3 rounded-xl bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/20 transition"
+          >
+            &larr; Alle Sportarten im Überblick
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Details & Training -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Fitness ohne Leistungsdruck</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Bewegung, die gut tut</h2>
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          Ballgymnastik kombiniert gezielte gymnastische Übungen, Kräftigung der Rumpf- und Rückenmuskulatur sowie schonendes Ausdauertraining mit spielerischen Ballübungen (Gymnastikbälle, Medizinbälle, Softbälle).
+        </p>
+        <p class="text-slate-600 mt-3 leading-relaxed">
+          Hier geht es nicht um Rekorde oder Tabellen, sondern um persönliche Fitness, den Erhalt der Mobilität im Alltag und das gemeinsame Lachen in der Gruppe. <strong>Neue Gesichter sind jederzeit herzlich willkommen!</strong>
+        </p>
+
+        <!-- Trainingszeiten -->
+        <div class="mt-8 bg-slate-50 rounded-2xl p-6 border border-slate-200">
+          <h3 class="font-bold text-slate-900 text-lg mb-3 flex items-center gap-2">
+            <span>🕒</span> Wann & Wo
+          </h3>
+          <div class="space-y-2 text-sm text-slate-700">
+            <div class="flex items-start gap-2">
+              <span class="font-bold w-24">Wann:</span>
+              <span>Jeden Donnerstag von <strong>18:30 bis 20:00 Uhr</strong></span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="font-bold w-24">Ort:</span>
+              <span>Sporthalle Schulzentrum Bocklemünd, Heinrich-Rohlmann-Straße / Wilhelm-Löhers-Platz</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="font-bold w-24">Ausrüstung:</span>
+              <span>Bequeme Sportbekleidung, Hallenturnschuhe und ein kleines Handtuch. Bälle und Trainingsgeräte stellt der Verein.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bild -->
+      <div class="space-y-4">
+        <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-slate-100 max-h-96">
+          <Image
+            src={ballgymnastikImg}
+            alt="Ballgymnastik und Fitnesstraining"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+        <div class="bg-emerald-50 rounded-2xl p-5 border border-emerald-200 text-xs text-emerald-900">
+          <strong>Reinschnuppern:</strong> Du möchtest etwas für Rücken, Gelenke und Kreislauf tun? Komm einfach donnerstags in Sportkleidung vorbei und mach unverbindlich mit!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Fragen zur Gruppe?</h2>
+      <p class="text-slate-600 mt-2 text-sm">
+        Melde dich einfach kurz bei uns. Wir freuen uns über jede neue Teilnehmerin und jeden neuen Teilnehmer!
+      </p>
+      <div class="mt-6">
+        <a
+          href="/kontakt?betreff=Ballgymnastik"
+          class="inline-block px-6 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow"
+        >
+          Kontakt aufnehmen
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

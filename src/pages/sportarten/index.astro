@@ -1,12 +1,12 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
 import { Image } from 'astro:assets';
 
-import badmintonImg from '../assets/images/badminton.jpg';
-import tischtennisTeamImg from '../assets/images/tischtennis-team.jpg';
-import tischtennisTeam2Img from '../assets/images/tischtennis-team2.jpg';
-import sporthalleImg from '../assets/images/sporthalle.webp';
-import tennisplatzImg from '../assets/images/tennisplatz.jpg';
+import badmintonImg from '../../assets/images/badminton.jpg';
+import tischtennisTeamImg from '../../assets/images/tischtennis-team.jpg';
+import tischtennisTeam2Img from '../../assets/images/tischtennis-team2.jpg';
+import sporthalleImg from '../../assets/images/sporthalle.webp';
+import tennisplatzImg from '../../assets/images/tennisplatz.jpg';
 ---
 
 <MainLayout
@@ -121,10 +121,16 @@ import tennisplatzImg from '../assets/images/tennisplatz.jpg';
 
         <div class="mt-6 flex flex-wrap gap-4">
           <a
-            href="/kontakt?betreff=Pickleball"
+            href="/sportarten/pickleball"
             class="px-5 py-2.5 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-500 transition shadow"
           >
-            Zum Pickleball-Probetraining anmelden
+            Ausführliche Pickleball-Seite &rarr;
+          </a>
+          <a
+            href="/kontakt?betreff=Pickleball"
+            class="px-5 py-2.5 rounded-xl bg-slate-800 text-white font-semibold hover:bg-slate-700 transition shadow"
+          >
+            Zum Probetraining anmelden
           </a>
         </div>
       </div>
@@ -160,10 +166,16 @@ import tennisplatzImg from '../assets/images/tennisplatz.jpg';
             </div>
           </div>
 
-          <div class="mt-6">
+          <div class="mt-6 flex flex-wrap gap-4">
+            <a
+              href="/sportarten/badminton"
+              class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow inline-block"
+            >
+              Ausführliche Badminton-Seite &rarr;
+            </a>
             <a
               href="/kontakt?betreff=Badminton"
-              class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow inline-block"
+              class="px-5 py-2.5 rounded-xl bg-slate-100 text-slate-800 font-semibold hover:bg-slate-200 transition shadow inline-block"
             >
               Beim Badminton mitspielen
             </a>
@@ -215,8 +227,14 @@ import tennisplatzImg from '../assets/images/tennisplatz.jpg';
 
         <div class="mt-6 flex flex-wrap gap-4">
           <a
-            href="/kontakt?betreff=Eltern-Kind-Turnen"
+            href="/sportarten/turnen"
             class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow"
+          >
+            Ausführliche Turnen-Seite &rarr;
+          </a>
+          <a
+            href="/kontakt?betreff=Eltern-Kind-Turnen"
+            class="px-5 py-2.5 rounded-xl bg-slate-800 text-white font-semibold hover:bg-slate-700 transition shadow"
           >
             Platz & Hallenzeiten anfragen
           </a>
@@ -255,10 +273,16 @@ import tennisplatzImg from '../assets/images/tennisplatz.jpg';
           </div>
         </div>
 
-        <div class="mt-6">
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a
+            href="/sportarten/gymnastik"
+            class="px-5 py-2.5 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition shadow inline-block"
+          >
+            Ausführliche Ballgymnastik-Seite &rarr;
+          </a>
           <a
             href="/kontakt?betreff=Ballgymnastik"
-            class="px-5 py-2.5 rounded-xl bg-slate-800 text-white font-semibold hover:bg-slate-700 transition shadow inline-block"
+            class="px-5 py-2.5 rounded-xl bg-slate-100 text-slate-800 font-semibold hover:bg-slate-200 transition shadow inline-block"
           >
             Zum Probetraining anmelden
           </a>
@@ -296,10 +320,16 @@ import tennisplatzImg from '../assets/images/tennisplatz.jpg';
             </div>
           </div>
 
-          <div class="mt-6">
+          <div class="mt-6 flex flex-wrap gap-4">
+            <a
+              href="/sportarten/tischtennis"
+              class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow inline-block"
+            >
+              Ausführliche Tischtennis-Seite &rarr;
+            </a>
             <a
               href="/kontakt?betreff=Tischtennis"
-              class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow inline-block"
+              class="px-5 py-2.5 rounded-xl bg-slate-100 text-slate-800 font-semibold hover:bg-slate-200 transition shadow inline-block"
             >
               Beim Tischtennis mitspielen
             </a>

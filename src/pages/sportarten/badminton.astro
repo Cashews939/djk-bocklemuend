@@ -1,0 +1,142 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+import badmintonImg from '../../assets/images/badminton.jpg';
+import badmintonDoppelImg from '../../assets/images/badminton-doppel.jpg';
+import walterSchniererImg from '../../assets/images/vorstand-walter-schnierer.jpg';
+---
+
+<MainLayout
+  title="Badminton in Köln-Bocklemünd | DJK Bocklemünd 1967 e.V."
+  description="Badminton für Freizeit- und Hobbyspieler bei der DJK Köln-Bocklemünd. Montags 19:00 - 21:00 Uhr in der neuen Halle. Jetzt zum Schnuppertraining vorbeikommen!"
+>
+  <!-- Hero Section -->
+  <section class="bg-slate-900 text-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-4">
+          🏸 Racketsport & Freizeitgruppe
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Badminton bei der DJK Bocklemünd
+        </h1>
+        <p class="mt-4 text-lg text-slate-300 font-light leading-relaxed">
+          Schnelligkeit, Ausdauer, Reflexe und vor allem jede Menge Spaß im Doppel und Einzel: Unsere Badminton-Gruppe verbindet sportliche Bewegung mit geselligem Teamgeist.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/kontakt?betreff=Badminton%20Schnuppertraining"
+            class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition shadow"
+          >
+            Kostenloses Probetraining anfragen
+          </a>
+          <a
+            href="/sportarten"
+            class="px-6 py-3 rounded-xl bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/20 transition"
+          >
+            &larr; Alle Sportarten im Überblick
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über die Abteilung -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Tradition & Gemeinschaft</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Seit über 10 Jahren ein fester Kern</h2>
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          Seit mehr als einem Jahrzehnt hat die Badmintonabteilung der DJK Köln-Bocklemünd einen eingespielten, festen Kern. Doch Stillstand gibt es bei uns nicht: Wir freuen uns umso mehr über jedes neue Gesicht – egal ob Einsteiger, Wiedereinsteiger oder ambitionierte Hobbyspieler –, das frischen Wind und Freude am Ballwechsel in unsere Runde bringt.
+        </p>
+        <p class="text-slate-600 mt-3 leading-relaxed">
+          Gespielt wird in lockerer, freundschaftlicher Atmosphäre. Im Mittelpunkt stehen abwechslungsreiche Doppel- und Mixed-Partien sowie die Freude am gemeinsamen Auspowern nach Feierabend.
+        </p>
+
+        <!-- Trainingsdetails Box -->
+        <div class="mt-8 bg-slate-50 rounded-2xl p-6 border border-slate-200">
+          <h3 class="font-bold text-slate-900 text-lg mb-3 flex items-center gap-2">
+            <span>🕒</span> Trainingszeiten & Trainingsort
+          </h3>
+          <div class="space-y-2 text-sm text-slate-700">
+            <div class="flex items-start gap-2">
+              <span class="font-bold w-24">Wann:</span>
+              <span>Montags, <strong>19:00 – 21:00 Uhr</strong></span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="font-bold w-24">Wo:</span>
+              <span>Neue Dreifach-Sporthalle am Schulzentrum / Wilhelm-Löhers-Platz (50829 Köln)</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="font-bold w-24">Mitzubringen:</span>
+              <span>Hallensportschuhe mit heller, abriebfester Sohle und bequeme Sportkleidung. Schläger können zum Reinschnuppern gerne geliehen werden!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galerie -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-64 bg-slate-100">
+          <Image
+            src={badmintonImg}
+            alt="Badminton Federbälle und Rackets"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-64 bg-slate-100">
+          <Image
+            src={badmintonDoppelImg}
+            alt="Badminton gemischtes Doppel im Spiel"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+        <div class="sm:col-span-2 bg-emerald-50 rounded-2xl p-5 border border-emerald-200 text-xs text-emerald-900">
+          <strong>Tipp für Neulinge:</strong> Komm einfach montags kurz vor 19:00 Uhr vorbei oder schreib uns eine kurze Nachricht. Du bist herzlich willkommen!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ansprechpartner -->
+  <section class="py-16 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center gap-8">
+        <div class="w-32 h-32 rounded-2xl overflow-hidden border-2 border-emerald-500 flex-shrink-0 bg-slate-50">
+          <Image
+            src={walterSchniererImg}
+            alt="Walter Schnierer - Ansprechpartner Badminton"
+            class="w-full h-full object-contain p-2"
+            format="webp"
+          />
+        </div>
+        <div class="flex-grow text-center sm:text-left">
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 mb-2">
+            Abteilungsleiter & Ansprechpartner
+          </span>
+          <h3 class="text-2xl font-bold text-slate-900">Walter Schnierer</h3>
+          <p class="text-sm text-slate-600 mt-1">
+            Fragen zu Trainingszeiten, Spielstärke oder Probetraining? Walter steht dir gerne mit Rat und Tat zur Seite.
+          </p>
+          <div class="mt-4 flex flex-wrap justify-center sm:justify-start gap-4 text-xs font-medium text-slate-700">
+            <span class="flex items-center gap-1.5">📞 02238 962818</span>
+            <span class="flex items-center gap-1.5">📱 01520 3213286</span>
+            <span class="flex items-center gap-1.5">✉️ walter.schnierer@gmail.com</span>
+          </div>
+          <div class="mt-5 flex flex-wrap justify-center sm:justify-start gap-3">
+            <a
+              href="mailto:walter.schnierer@gmail.com?subject=Badminton%20DJK%20Bocklem%C3%BCnd"
+              class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition shadow text-xs"
+            >
+              E-Mail an Walter senden
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

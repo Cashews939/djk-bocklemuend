@@ -1,0 +1,117 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+import pickleballActionImg from '../../assets/images/pickleball-action.jpg';
+import pickleballTeamImg from '../../assets/images/pickleball-team.jpg';
+import kaiAuhagenImg from '../../assets/images/vorstand-kai-auhagen.jpg';
+---
+
+<MainLayout
+  title="Pickleball in Köln | DJK Bocklemünd & Gruppe Pickleball-Köln"
+  description="Entdecke Pickleball in Köln-Bocklemünd. Gegründet 2020 als Pickleball-Köln, heute eine der aktivsten Gruppen Deutschlands. Trainingszeiten, Schnuppertraining und Einstieg."
+>
+  <!-- Hero Section -->
+  <section class="bg-slate-900 text-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30 mb-4">
+          🏓 Racketsport Trend · Gruppe Pickleball-Köln
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Pickleball bei der DJK Bocklemünd
+        </h1>
+        <p class="mt-4 text-lg text-slate-300 font-light leading-relaxed">
+          Das dynamische Rückschlagspiel, das Elemente aus Tennis, Badminton und Tischtennis vereint. Leicht zu lernen, riesiger Spaßfaktor und für jede Altersklasse geeignet!
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/kontakt?betreff=Pickleball%20Schnuppertraining"
+            class="px-6 py-3 rounded-xl bg-amber-600 text-white font-bold hover:bg-amber-500 transition shadow"
+          >
+            Kostenloses Probetraining vereinbaren
+          </a>
+          <a
+            href="/sportarten"
+            class="px-6 py-3 rounded-xl bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/20 transition"
+          >
+            &larr; Alle Sportarten im Überblick
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Geschichte & Entstehung -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-700">Erfolgsgeschichte aus Köln</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Von Kanada nach Köln-Bocklemünd</h2>
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          Die Gruppe <strong>Pickleball-Köln</strong> (Pickleball-Cologne) geht auf die Initiative von Ute Heinen-Jordan und Uli Jordan zurück, die den Sport im Sommer 2020 in Kanada kennen- und lieben gelernt haben. Im Herbst 2020 fanden die ersten Trainingsspiele in Köln statt.
+        </p>
+        <p class="text-slate-600 mt-3 leading-relaxed">
+          Seit <strong>2023</strong> gehört die Gruppe fest zur DJK Köln-Bocklemünd 1967 e.V. und hat sich in rasantem Tempo zu einer der <strong>größten und erfolgreichsten Pickleball-Gruppen in ganz Deutschland</strong> entwickelt. Regelmäßige Spieltage, Ranglistenspiele und herzliche Gemeinschaft zeichnen unsere Sparte aus.
+        </p>
+        
+        <div class="mt-6 bg-amber-50 p-5 rounded-2xl border border-amber-200 text-xs text-amber-900 space-y-2">
+          <div>• <strong>Ausrüstung:</strong> Spezielle Paddles und perforierte Bälle stellen wir dir beim Probetraining kostenlos.</div>
+          <div>• <strong>Schuhe:</strong> Normale Hallensportschuhe mit heller Sohle genügen für den Start.</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-64 bg-slate-100">
+          <Image
+            src={pickleballActionImg}
+            alt="Pickleball Spielszene in der Halle"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-64 bg-slate-100">
+          <Image
+            src={pickleballTeamImg}
+            alt="Pickleball Gruppe Köln Bocklemünd"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ansprechpartner & Fakten -->
+  <section class="py-16 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center gap-8">
+        <div class="w-32 h-32 rounded-2xl overflow-hidden border-2 border-amber-400 flex-shrink-0 bg-slate-50">
+          <Image
+            src={kaiAuhagenImg}
+            alt="Kai Auhagen - Leitung Pickleball"
+            class="w-full h-full object-contain p-2"
+            format="webp"
+          />
+        </div>
+        <div class="flex-grow text-center sm:text-left">
+          <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 mb-2">
+            Spartenleitung & Trainer
+          </span>
+          <h3 class="text-2xl font-bold text-slate-900">Kai Auhagen</h3>
+          <p class="text-sm text-slate-600 mt-1">
+            Ansprechpartner für Trainingszeiten, Schnuppertraining und Einstieg in die Gruppe Pickleball-Köln.
+          </p>
+          <div class="mt-4 flex flex-wrap justify-center sm:justify-start gap-3">
+            <a
+              href="/kontakt?betreff=Pickleball"
+              class="px-5 py-2.5 rounded-xl bg-amber-600 text-white font-bold hover:bg-amber-700 transition shadow text-xs"
+            >
+              Kai kontaktieren & mitspielen
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

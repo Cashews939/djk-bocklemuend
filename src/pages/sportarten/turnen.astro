@@ -1,0 +1,124 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+
+import turnenKinderImg from '../../assets/images/turnen-kinder.webp';
+import turnenParcoursImg from '../../assets/images/turnen-parcours.jpg';
+import turnenGruppeImg from '../../assets/images/turnen-gruppe.jpg';
+---
+
+<MainLayout
+  title="Eltern-Kind-Turnen | DJK Köln-Bocklemünd 1967 e.V."
+  description="Spielerische Bewegungsförderung für Kleinkinder und Kindergartenkinder gemeinsam mit den Eltern beim DJK Bocklemünd. Gruppen von 1-3 und 3-6 Jahren."
+>
+  <!-- Hero Section -->
+  <section class="bg-slate-900 text-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-4">
+          🤸 Familien- & Kindersport
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Eltern-Kind-Turnen
+        </h1>
+        <p class="mt-4 text-lg text-slate-300 font-light leading-relaxed">
+          Klettern, Balancieren, Schaukeln und Toben: Zusammen mit Mama, Papa, Oma oder Opa entdecken Kinder mit Freude und Neugier die Welt der Bewegung in unserer großen Turnhalle.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/kontakt?betreff=Eltern-Kind-Turnen"
+            class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition shadow"
+          >
+            Schnupperstunde anfragen
+          </a>
+          <a
+            href="/downloads/31a958_7cdb7433e6464e1b8f8232d924b5c91f.pdf"
+            target="_blank"
+            class="px-6 py-3 rounded-xl bg-white/10 text-white font-semibold border border-white/20 hover:bg-white/20 transition"
+          >
+            📄 Aufnahmeantrag (PDF)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pädagogisches Konzept & Gruppen -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Ganzheitliche Förderung</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Selbstvertrauen durch Bewegung</h2>
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          Vom Schaukeln an den Tauen und Ringen über das mutige Balancieren auf schmalen Bänken bis hin zu weichen Weichbodenmatten: Die Turnhalle ist für die Kleinen ein riesiger Abenteuerspielplatz.
+        </p>
+        <p class="text-slate-600 mt-3 leading-relaxed">
+          Dabei lernen Kinder nicht nur ihren eigenen Körper einzuschätzen, Gleichgewicht zu halten und Koordination zu schulen, sondern auch Rücksichtnahme, Fairplay und soziales Miteinander in der Gruppe Gleichaltriger.
+        </p>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <span class="text-xs font-bold text-emerald-700 uppercase">Gruppe 1</span>
+            <h3 class="font-bold text-slate-900 text-lg mt-1 mb-2">1 bis 3 Jahre</h3>
+            <p class="text-xs text-slate-600">
+              Erste Krabbel-, Hüpf- und Greiferfahrungen gemeinsam Hand in Hand mit einem Elternteil.
+            </p>
+          </div>
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+            <span class="text-xs font-bold text-emerald-700 uppercase">Gruppe 2</span>
+            <h3 class="font-bold text-slate-900 text-lg mt-1 mb-2">3 bis 6 Jahre</h3>
+            <p class="text-xs text-slate-600">
+              Mutige Gerätelandschaften, Parcours, Fangspiele und Förderung der Eigenständigkeit.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Galerie -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-64 bg-slate-100 sm:col-span-2">
+          <Image
+            src={turnenKinderImg}
+            alt="Kinder beim Turnen an den Ringen"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-48 bg-slate-100">
+          <Image
+            src={turnenParcoursImg}
+            alt="Bewegungsparcours Turnhalle Bocklemünd"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-48 bg-slate-100">
+          <Image
+            src={turnenGruppeImg}
+            alt="Eltern und Kinder beim Abschlusskreis"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Ort & Organisatorisches -->
+    <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-700">
+        <div>
+          <strong class="text-slate-900 block mb-1">📍 Turnhalle:</strong>
+          Sporthalle Wilhelm-Löhers-Platz 4, 50829 Köln-Bocklemünd
+        </div>
+        <div>
+          <strong class="text-slate-900 block mb-1">👟 Kleidung:</strong>
+          Bequeme Turnkleidung & Turnschläppchen oder Stoppersocken
+        </div>
+        <div>
+          <strong class="text-slate-900 block mb-1">🤝 Schnuppern:</strong>
+          Gerne 1–2 Probestunden unverbindlich mitmachen!
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
