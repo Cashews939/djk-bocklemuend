@@ -5,15 +5,18 @@ import tennisplatzImg from '../assets/images/tennisplatz.jpg';
 ---
 
 <MainLayout>
-  <!-- Hero Section mit Originalfoto der Anlage -->
+  <!-- Hero Section mit Originalfoto der Anlage & subtiler dynamischer Bewegung -->
   <section class="relative bg-slate-900 text-white overflow-hidden py-20 lg:py-28">
-    <div class="absolute inset-0 z-0 opacity-30">
-      <Image
-        src={tennisplatzImg}
-        alt="Tennisanlage Heinrich-Rohlmann-Straße der TG Grün-Weiß Bocklemünd"
-        class="w-full h-full object-cover"
-        format="webp"
-      />
+    <!-- Dynamischer Hintergrund: Sanfter Ken-Burns-Effekt -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div class="hero-bg-animate w-full h-full opacity-35">
+        <Image
+          src={tennisplatzImg}
+          alt="Tennisanlage Heinrich-Rohlmann-Straße der TG Grün-Weiß Bocklemünd"
+          class="w-full h-full object-cover"
+          format="webp"
+        />
+      </div>
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-6 backdrop-blur">
@@ -182,3 +185,32 @@ import tennisplatzImg from '../assets/images/tennisplatz.jpg';
     </div>
   </section>
 </MainLayout>
+
+<style>
+  /* Sanfte, filmische Bewegung (Ken-Burns-Effekt) */
+  @keyframes heroKenBurns {
+    0% {
+      transform: scale(1) translate(0%, 0%);
+    }
+    50% {
+      transform: scale(1.08) translate(-1.5%, -1%);
+    }
+    100% {
+      transform: scale(1) translate(0%, 0%);
+    }
+  }
+
+  .hero-bg-animate {
+    animation: heroKenBurns 24s ease-in-out infinite alternate;
+    will-change: transform;
+    transform-origin: center center;
+  }
+
+  /* Barrierefreiheit: Bewegung stoppen bei reduzierter Bewegung */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bg-animate {
+      animation: none;
+      transform: none;
+    }
+  }
+</style>
