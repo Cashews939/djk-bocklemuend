@@ -1,98 +1,357 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
 
-const sports = [
-  {
-    title: 'Tennis (TG Grün-Weiß)',
-    icon: '🎾',
-    badge: '5 Ascheplätze',
-    desc: 'Traditionsreicher Tennissport an der Heinrich-Rohlmann-Straße mit 8 Mannschaften im Ligabetrieb des TVM sowie engagierter Jugendarbeit.',
-    link: '/tennis',
-    linkText: 'Zur Tennis-Sparte'
-  },
-  {
-    title: 'Pickleball',
-    icon: '🏓',
-    badge: 'Trendsportart',
-    desc: 'Das dynamische Racket-Spiel, das Elemente aus Badminton, Tennis und Tischtennis verbindet. Leicht zu erlernen und riesiger Spaßfaktor für jedes Alter.',
-    link: '/kontakt?betreff=Pickleball',
-    linkText: 'Mitspielen & Infos'
-  },
-  {
-    title: 'Badminton',
-    icon: '🏸',
-    badge: 'Freizeitsport',
-    desc: 'Schnelle Ballwechsel, Kondition und Geselligkeit in unserer Sporthalle am Wilhelm-Löhers-Platz. Offen für Anfänger und Fortgeschrittene.',
-    link: '/kontakt?betreff=Badminton',
-    linkText: 'Trainingszeiten anfragen'
-  },
-  {
-    title: 'Eltern-Kind-Turnen',
-    icon: '🤸',
-    badge: 'Für die Kleinsten',
-    desc: 'Spielerische Bewegungsförderung, Balancieren, Klettern und Spaß an Bewegung für Kleinkinder gemeinsam mit ihren Eltern.',
-    link: '/kontakt?betreff=Turnen',
-    linkText: 'Gruppen & Hallenzeiten'
-  },
-  {
-    title: 'Ballgymnastik & Fitness',
-    icon: '⚽',
-    badge: 'Gesundheitssport',
-    desc: 'Gezieltes Ganzkörpertraining, Koordination, Beweglichkeit und Kräftigung für Erwachsene und Senioren.',
-    link: '/kontakt?betreff=Gymnastik',
-    linkText: 'Mehr erfahren'
-  },
-  {
-    title: 'Tischtennis',
-    icon: '🏓',
-    badge: 'Traditionssparte',
-    desc: 'Langjährige Abteilung mit regelmäßigen Vereinsmeisterschaften, Weihnachtsturnieren und Trainingsgruppen in Bocklemünd.',
-    link: '/kontakt?betreff=Tischtennis',
-    linkText: 'Trainingszeiten'
-  }
-];
+import badmintonImg from '../assets/images/badminton.jpg';
+import tischtennisTeamImg from '../assets/images/tischtennis-team.jpg';
+import tischtennisMatchImg from '../assets/images/tischtennis-match.jpg';
+import sporthalleImg from '../assets/images/sporthalle.webp';
+import tennisplatzImg from '../assets/images/tennisplatz.jpg';
 ---
 
 <MainLayout
   title="Sportarten & Breitensport | DJK Köln-Bocklemünd 1967 e.V."
-  description="Entdecke das gesamte Sportangebot der DJK Köln-Bocklemünd: Tennis, Pickleball, Badminton, Eltern-Kind-Turnen, Ballgymnastik und Tischtennis."
+  description="Alle Sportangebote der DJK Köln-Bocklemünd: Tennis (TG Grün-Weiß), Pickleball, Badminton, Eltern-Kind-Turnen, Ballgymnastik und Tischtennis mit Trainingszeiten und Ansprechpartnern."
 >
+  <!-- Hero Section -->
   <section class="bg-slate-900 text-white py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-4">
-        Mehrspartenverein seit 1967
+        Mehrspartenverein seit 1967 · Köln-Bocklemünd
       </span>
       <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
-        Unsere Sportarten
+        Unsere Sportangebote im Detail
       </h1>
-      <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto font-light">
-        Sport und Bewegung für jedes Alter und jedes Niveau – mit Herz und Leidenschaft in Köln-Bocklemünd.
+      <p class="mt-4 text-lg text-slate-300 max-w-3xl mx-auto font-light">
+        Vom Racketsport über den Trendsport Pickleball bis hin zur frühkindlichen Bewegungsförderung und Gesundheitssport. Hier findest du alle Abteilungen, Trainingszeiten und Ansprechpartner!
       </p>
+
+      <!-- Quick Nav Anchor Pills -->
+      <div class="mt-8 flex flex-wrap justify-center gap-2 text-xs font-medium">
+        <a href="#tennis" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-emerald-600 text-slate-200 hover:text-white transition">🎾 Tennis</a>
+        <a href="#pickleball" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-emerald-600 text-slate-200 hover:text-white transition">🏓 Pickleball</a>
+        <a href="#badminton" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-emerald-600 text-slate-200 hover:text-white transition">🏸 Badminton</a>
+        <a href="#turnen" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-emerald-600 text-slate-200 hover:text-white transition">🤸 Eltern-Kind-Turnen</a>
+        <a href="#gymnastik" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-emerald-600 text-slate-200 hover:text-white transition">⚽ Ballgymnastik</a>
+        <a href="#tischtennis" class="px-3.5 py-1.5 rounded-full bg-slate-800 hover:bg-emerald-600 text-slate-200 hover:text-white transition">🏓 Tischtennis</a>
+      </div>
     </div>
   </section>
 
-  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {sports.map((item) => (
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-3xl">{item.icon}</span>
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700">
-                {item.badge}
-              </span>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-            <p class="text-sm text-slate-600 leading-relaxed mb-6">{item.desc}</p>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- 1. TENNIS (TG Grün-Weiß) -->
+    <section id="tennis" class="scroll-mt-28 bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">🎾</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+              TG Grün-Weiß im TVM
+            </span>
           </div>
+          <h2 class="text-3xl font-extrabold text-slate-900">Tennis an der Heinrich-Rohlmann-Straße</h2>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Fünf gepflegte Rotsand-Ascheplätze, ein Clubhaus mit Sonnenterrasse und reger Spielbetrieb im Tennisverband Mittelrhein (TVM). Von Nachwuchsförderung im Sommercamp bis zu Meisterschaftsspielen in den Ligen Damen, Herren, Altersklassen 30, 40, 50 und 70.
+          </p>
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-700 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+            <div>
+              <strong>📍 Anlage:</strong> Heinrich-Rohlmann-Str., 50829 Köln<br />
+              <strong>⏱️ Saison:</strong> April bis Oktober (Freiluft)
+            </div>
+            <div>
+              <strong>👤 Sportwart:</strong> Andreas Witkiewicz<br />
+              <strong>🆓 Angebot:</strong> Kostenloses Schnuppertraining
+            </div>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-4">
+            <a
+              href="/tennis"
+              class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow"
+            >
+              Ausführliche Tennis-Seite &rarr;
+            </a>
+            <a
+              href="/tennis#schnuppern"
+              class="px-5 py-2.5 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-500 transition shadow"
+            >
+              Schnuppertraining anfragen
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-slate-200 shadow-md h-72 lg:h-full min-h-[260px]">
+          <Image
+            src={tennisplatzImg}
+            alt="5 Tennisplätze TG Grün-Weiß"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PICKLEBALL -->
+    <section id="pickleball" class="scroll-mt-28 bg-gradient-to-br from-amber-50/50 via-white to-slate-50 rounded-3xl p-8 sm:p-12 border border-amber-200 shadow-sm">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-2xl">🏓</span>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800">
+            Trendsportart Nr. 1 · Gruppe Pickleball-Köln
+          </span>
+        </div>
+        <h2 class="text-3xl font-extrabold text-slate-900">Pickleball in Köln-Bocklemünd</h2>
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          Pickleball ist die weltweit am schnellsten wachsende Rückschlagsportart – eine geniale Mischung aus Tennis, Badminton und Tischtennis. Gespielt wird mit leichten Paddles und einem gelochten Kunststoffball auf einem kompakten Feld mit niedrigem Netz.
+        </p>
+        <p class="text-slate-600 mt-3 text-sm leading-relaxed">
+          Die Initiative <strong>Pickleball-Köln</strong> schloss sich 2023 der DJK Bocklemünd an und gehört heute zu den aktivsten und mitgliederstärksten Pickleball-Gemeinschaften in ganz Deutschland. Ob jung oder alt, Einsteiger oder Turnierspieler: Nach nur 10 Minuten hat man den Dreh raus!
+        </p>
+
+        <div class="mt-6 bg-white p-5 rounded-2xl border border-amber-100 shadow-sm grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-700">
+          <div>
+            <strong>📍 Spielstätte:</strong> Sporthalle Wilhelm-Löhers-Platz 4<br />
+            <strong>🎾 Equipment:</strong> Paddles & Bälle vor Ort vorhanden
+          </div>
+          <div>
+            <strong>👤 Ansprechpartner:</strong> Kai Auhagen (Leitung Pickleball)<br />
+            <strong>💡 Besonderheit:</strong> Kein Vorwissen nötig – einfach ausprobieren!
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-4">
           <a
-            href={item.link}
-            class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 inline-flex items-center gap-1"
+            href="/kontakt?betreff=Pickleball"
+            class="px-5 py-2.5 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-500 transition shadow"
           >
-            {item.linkText} &rarr;
+            Zum Pickleball-Probetraining anmelden
           </a>
         </div>
-      ))}
-    </div>
-  </section>
+      </div>
+    </section>
+
+    <!-- 3. BADMINTON -->
+    <section id="badminton" class="scroll-mt-28 bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">🏸</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800">
+              Seit über 10 Jahren fester Kern
+            </span>
+          </div>
+          <h2 class="text-3xl font-extrabold text-slate-900">Badminton</h2>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Schnelle Reflexe, Kondition und jede Menge Spaß am dynamischen Federspiel: Seit über einem Jahrzehnt trifft sich unsere feste Badminton-Gruppe regelmäßig zum Spiel. Wir freuen uns über jedes neue Gesicht, das frischen Wind und Freude an der Bewegung in die Halle bringt!
+          </p>
+
+          <div class="mt-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 text-xs text-slate-700 space-y-2">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+              <span><strong>⏱️ Trainingszeit:</strong></span>
+              <span class="font-bold text-slate-900">Montags, 19:00 – 21:00 Uhr</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+              <span><strong>📍 Ort:</strong></span>
+              <span>Neue Sporthalle am Wilhelm-Löhers-Platz</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span><strong>👤 Ansprechpartner:</strong></span>
+              <span>Walter Schnierer (Sportwart Breitensport)</span>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <a
+              href="/kontakt?betreff=Badminton"
+              class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow inline-block"
+            >
+              Beim Badminton mitspielen
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-slate-200 shadow-md h-72 lg:h-full min-h-[260px]">
+          <Image
+            src={badmintonImg}
+            alt="Badminton gemischtes Doppel DJK Bocklemünd"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ELTERN-KIND-TURNEN -->
+    <section id="turnen" class="scroll-mt-28 bg-gradient-to-br from-emerald-50/50 via-white to-slate-50 rounded-3xl p-8 sm:p-12 border border-emerald-200 shadow-sm">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-2xl">🤸</span>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+            Frühkindliche Bewegung
+          </span>
+        </div>
+        <h2 class="text-3xl font-extrabold text-slate-900">Eltern-Kind-Turnen</h2>
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          Gemeinsam mit Mama, Papa, Oma oder Opa machen die Kleinen ihre ersten sportlichen Schritte: Vom Schaukeln an den Ringen über Balancieren auf Bänken bis hin zu Kletterparcours. Die Bewegung in der großen Halle stärkt Koordination, Selbstvertrauen und das soziale Miteinander im Spiel mit Gleichaltrigen.
+        </p>
+
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm">
+            <div class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Gruppe 1</div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Kinder von 1 bis 3 Jahren</h4>
+            <p class="text-xs text-slate-600">
+              Spielerisches Kennenlernen von Hindernissen, erstes Krabbeln & Hüpfen unter liebevoller Begleitung der Eltern.
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-emerald-100 shadow-sm">
+            <div class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-1">Gruppe 2</div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Kinder von 3 bis 6 Jahren</h4>
+            <p class="text-xs text-slate-600">
+              Mutiges Ausprobieren an Geräten, Schulung von Gleichgewicht, Geschicklichkeit und Spaß am Toben.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a
+            href="/kontakt?betreff=Eltern-Kind-Turnen"
+            class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow"
+          >
+            Platz & Hallenzeiten anfragen
+          </a>
+          <a
+            href="/downloads"
+            class="px-5 py-2.5 rounded-xl bg-white text-slate-700 font-semibold border border-slate-300 hover:bg-slate-50 transition"
+          >
+            Aufnahmeantrag herunterladen
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. BALLGYMNASTIK -->
+    <section id="gymnastik" class="scroll-mt-28 bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-2xl">⚽</span>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700">
+            Gesundheitssport & Fitness
+          </span>
+        </div>
+        <h2 class="text-3xl font-extrabold text-slate-900">Ballgymnastik</h2>
+        <p class="text-slate-600 mt-4 leading-relaxed">
+          <em>„Wir betreiben die schönste Nebensache der Welt als reines Hobby.“</em> Bewegung, Spaß und sanfte Fitness für den ganzen Körper. Unser Training stärkt Rücken, Rumpf und Koordination durch abwechslungsreiche Übungen mit und ohne Ball.
+        </p>
+
+        <div class="mt-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 text-xs text-slate-700 space-y-2">
+          <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+            <span><strong>⏱️ Trainingszeit:</strong></span>
+            <span class="font-bold text-slate-900">Donnerstags, 18:30 – 20:00 Uhr</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span><strong>📍 Ort:</strong></span>
+            <span>Sporthalle Wilhelm-Löhers-Platz, 50829 Köln</span>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <a
+            href="/kontakt?betreff=Ballgymnastik"
+            class="px-5 py-2.5 rounded-xl bg-slate-800 text-white font-semibold hover:bg-slate-700 transition shadow inline-block"
+          >
+            Zum Probetraining anmelden
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. TISCHTENNIS -->
+    <section id="tischtennis" class="scroll-mt-28 bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">🏓</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-800">
+              Traditionsabteilung mit mehreren Teams
+            </span>
+          </div>
+          <h2 class="text-3xl font-extrabold text-slate-900">Tischtennis</h2>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Ob Hobby, ambitioniertes Vereinsspiel oder spannende Punktspiele im Westdeutschen Tischtennis-Verband (WTTV): Unsere Abteilung bietet mehrere Herren- und Freizeitmannschaften von der 2. Bezirksliga bis zu den Kreisklassen sowie interne Vereinsmeisterschaften und Weihnachtsturniere.
+          </p>
+
+          <div class="mt-6 bg-slate-50 p-4 rounded-2xl border border-slate-100 text-xs text-slate-700 space-y-2">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+              <span><strong>⏱️ Trainingszeiten:</strong></span>
+              <span class="font-bold text-slate-900">Dienstags & Donnerstags, 17:00 – 21:30 Uhr</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+              <span><strong>📍 Spielort:</strong></span>
+              <span>Sporthalle Wilhelm-Löhers-Platz</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span><strong>🏆 Mannschaften:</strong></span>
+              <span>1. bis 5. Mannschaft im Ligaspielbetrieb</span>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <a
+              href="/kontakt?betreff=Tischtennis"
+              class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition shadow inline-block"
+            >
+              Beim Tischtennis mitspielen
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 grid grid-cols-1 gap-4">
+          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-44">
+            <Image
+              src={tischtennisTeamImg}
+              alt="Tischtennis Mannschaft DJK Bocklemünd"
+              class="w-full h-full object-cover"
+              format="webp"
+            />
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-44">
+            <Image
+              src={tischtennisMatchImg}
+              alt="Tischtennis Meisterschaftsspiel"
+              class="w-full h-full object-cover"
+              format="webp"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hallen & Trainingsstätten Hinweis -->
+    <section class="bg-slate-100 rounded-3xl p-8 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-5">
+        <div class="w-16 h-16 rounded-2xl overflow-hidden border border-slate-300 flex-shrink-0">
+          <Image
+            src={sporthalleImg}
+            alt="Hallenzugang Wilhelm-Löhers-Platz"
+            class="w-full h-full object-cover"
+            format="webp"
+          />
+        </div>
+        <div>
+          <h3 class="font-bold text-slate-900 text-lg">Du suchst den Weg zur Halle?</h3>
+          <p class="text-xs text-slate-600 mt-1">
+            Alle Hallensportarten (Badminton, Turnen, TT, Ballgymnastik, Pickleball) trainieren in der Sporthalle am <strong>Wilhelm-Löhers-Platz 4, 50829 Köln</strong>.
+          </p>
+        </div>
+      </div>
+      <a
+        href="/kontakt"
+        class="px-5 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition whitespace-nowrap flex-shrink-0"
+      >
+        Anfahrt & Hallenzugang &rarr;
+      </a>
+    </section>
+
+  </div>
 </MainLayout>
