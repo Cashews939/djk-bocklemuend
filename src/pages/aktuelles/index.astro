@@ -22,10 +22,10 @@ articles.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).
   <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {articles.map((item) => (
-        <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <article class="bg-gradient-to-br from-white via-emerald-50/25 to-emerald-50/50 rounded-3xl p-7 border border-emerald-100 shadow-sm hover:shadow-md hover:border-emerald-300 transition duration-300 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
-              <span class="px-2.5 py-0.5 rounded-full font-semibold bg-emerald-50 text-emerald-700">
+              <span class="px-2.5 py-0.5 rounded-full font-semibold bg-emerald-100/80 text-emerald-800">
                 {item.data.category}
               </span>
               <time datetime={item.data.date}>

@@ -28,7 +28,7 @@ events.sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).ge
         const year = d.getFullYear();
 
         return (
-          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:border-emerald-300 transition">
+          <div class="bg-gradient-to-r from-white via-white to-emerald-50/40 rounded-2xl p-6 border border-emerald-100 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:border-emerald-300 hover:shadow-md transition duration-300">
             <div class="flex items-center gap-6">
               <div class="w-16 h-16 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 flex flex-col items-center justify-center flex-shrink-0 font-bold">
                 <span class="text-xl leading-none">{day}</span>

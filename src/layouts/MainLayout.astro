@@ -22,7 +22,7 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased font-sans">
+  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased font-sans club-pattern-bg">
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -208,5 +208,28 @@ const {
         © 2026 DJK Köln-Bocklemünd 1967 e.V. Alle Rechte vorbehalten.
       </div>
     </footer>
+
+    <style is:global>
+      /* Subtiles, organisches, fließendes grünes Vereins-Muster */
+      .club-pattern-bg {
+        background-color: #f8fafc;
+        /* Sanfte Wellenlinien & geschwungene grüne Konturen */
+        background-image: 
+          radial-gradient(ellipse at 15% 15%, rgba(16, 185, 129, 0.045) 0%, transparent 60%),
+          radial-gradient(ellipse at 85% 65%, rgba(5, 150, 105, 0.04) 0%, transparent 55%),
+          radial-gradient(ellipse at 50% 90%, rgba(52, 211, 153, 0.035) 0%, transparent 50%),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cpath d='M0 35 C 35 15, 70 55, 105 35 C 125 25, 135 30, 140 35 L 140 37 C 135 32, 125 27, 105 37 C 70 57, 35 17, 0 37 Z M0 105 C 35 85, 70 125, 105 105 C 125 95, 135 100, 140 105 L 140 107 C 135 102, 125 97, 105 107 C 70 127, 35 87, 0 107 Z' fill='%23059669' fill-opacity='0.025'/%3E%3Cpath d='M35 0 C 15 35, 55 70, 35 105 C 25 125, 30 135, 35 140 L 37 140 C 32 135, 27 125, 37 105 C 57 70, 17 35, 37 0 Z M105 0 C 85 35, 125 70, 105 105 C 95 125, 100 135, 105 140 L 107 140 C 102 135, 97 125, 107 105 C 127 70, 87 35, 107 0 Z' fill='%2310b981' fill-opacity='0.018'/%3E%3C/svg%3E");
+        background-attachment: fixed;
+      }
+
+      /* Spezifische Wellen-Hintergrund-Klassen für Abschnitte */
+      .wave-pattern-emerald {
+        background-color: #f0fdf4;
+        background-image: 
+          radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+          radial-gradient(circle at 90% 80%, rgba(5, 150, 105, 0.07) 0%, transparent 45%),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='80' viewBox='0 0 160 80'%3E%3Cpath d='M0 40 Q 40 10 80 40 T 160 40' fill='none' stroke='%23059669' stroke-width='1.5' stroke-opacity='0.04' stroke-dasharray='6 6'/%3E%3Cpath d='M0 20 Q 40 50 80 20 T 160 20' fill='none' stroke='%2310b981' stroke-width='1' stroke-opacity='0.04'/%3E%3C/svg%3E");
+      }
+    </style>
   </body>
 </html>

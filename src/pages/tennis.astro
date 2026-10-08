@@ -127,7 +127,7 @@ const teams = [
   </section>
 
   <!-- Mannschaften Section mit echten Team-Fotos -->
-  <section id="mannschaften" class="py-16 bg-slate-50 border-y border-slate-200">
+  <section id="mannschaften" class="py-16 wave-pattern-emerald border-y border-emerald-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Wettkampf & Spielbetrieb</span>
@@ -139,7 +139,7 @@ const teams = [
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {teams.map((team) => (
-          <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div class="bg-white/95 rounded-2xl overflow-hidden border border-emerald-100 shadow-sm hover:shadow-md hover:border-emerald-300 transition duration-300 flex flex-col justify-between">
             <div class="h-48 overflow-hidden bg-slate-100">
               <Image
                 src={team.img}
@@ -249,19 +249,19 @@ const teams = [
   </section>
 
   <!-- Gastspieler-Regelung -->
-  <section id="gastspieler" class="py-16 bg-slate-100 border-t border-slate-200">
+  <section id="gastspieler" class="py-16 wave-pattern-emerald border-t border-emerald-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+      <div class="max-w-3xl mx-auto bg-white/95 rounded-3xl p-8 border border-emerald-100 shadow-sm">
         <h3 class="text-2xl font-bold text-slate-900 mb-4">Informationen für Gastspieler</h3>
         <p class="text-slate-600 text-sm leading-relaxed mb-4">
           Nicht-Mitglieder und Gäste sind auf unserer Anlage herzlich willkommen, um mit Vereinsmitgliedern ein Match zu spielen.
         </p>
-        <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 mb-6 text-sm text-slate-700 space-y-2">
-          <div class="flex justify-between py-1 border-b border-slate-200">
+        <div class="bg-emerald-50/50 rounded-2xl p-5 border border-emerald-100 mb-6 text-sm text-slate-700 space-y-2">
+          <div class="flex justify-between py-1 border-b border-emerald-100">
             <span>Platzgebühr für Gäste:</span>
             <span class="font-bold text-slate-900">gemäß Aushang & Platzordnung</span>
           </div>
-          <div class="flex justify-between py-1 border-b border-slate-200">
+          <div class="flex justify-between py-1 border-b border-emerald-100">
             <span>Schuhwerk:</span>
             <span class="font-bold text-slate-900">Ausschließlich Tennisschuhe (Sandplatzprofil)</span>
           </div>
@@ -278,7 +278,7 @@ const teams = [
   </section>
 
   <!-- Vereinsshop Teaser -->
-  <section class="py-16 bg-white border-t border-slate-200">
+  <section class="py-16 border-t border-emerald-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-gradient-to-r from-emerald-700 to-slate-900 rounded-3xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-md">
         <div>
